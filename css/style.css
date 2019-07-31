@@ -1,0 +1,98 @@
+/*-----General-----*/
+.row {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.alignleft {
+  text-align: right;
+}
+
+.sectionmargin {
+  margin-bottom: 1rem;
+}
+
+.sectionbackground {
+  background-color: lightgrey;
+}
+
+.marginlist {
+  margin-bottom: 1em;
+}
+
+.paddingtop {
+    padding-top: 9em;
+}
+
+.titlestyle {
+    margin-bottom: 1em;
+    text-align: center;;
+}
+
+.textcolor {
+  color:#e9ecef;
+}
+/*-----Header-----*/
+
+.navbarfixed {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.modal-backdrop.show {
+    opacity: 0;
+    z-index: -1;
+}
+
+.modal {
+  margin-top: 8em;
+}
+
+/*-----Hero-----*/
+
+.herocaption {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.herocaption img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.herocaption h1 {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.herocaption h1 p {
+  text-align: center;
+}
+
+.rowcard {
+  justify-content: space-around;
+}
+
+.card {
+  width: 18rem;
+}
+.card-img-top {
+  margin-top: 1em;
+  border-radius: .25rem;
+}
+
+.marginheader {
+  margin-left: 0.4em;
+}
+
+.pheader {
+  margin-bottom: 0rem;
+}
