@@ -81,6 +81,13 @@
   justify-content: space-around;
 }
 
+.articles {
+  text-align: center;
+  border: solid 1px #0069D9;
+  color: #0069D9;
+  border-radius: .3rem;
+}
+
 .card {
   width: 18rem;
 }

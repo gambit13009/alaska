@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="utf-8">
-		<title>Billet simple pour l'Alaska</title>
-		<!--Open Graph data-->
-	    <meta property="og:title" content="Billet simple pour l'Alaska" />
-	    <meta property="og:type" content="website" />
-	    <meta property="og:description" content="Billet simple pour l'Alaska Un roman de Jean Forteroche" />
-	    <link rel="stylesheet" href="css/style.css">
-	    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-	    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
-	    <link rel="stylesheet" href="css/bootstrap.min.css">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	</head>
-
- <!--Body-->
-  <body class="sectionbackground">
-
- <!--Header-->
+<!--Header-->
   	<header class="navbarfixed">
 
   <!--Navbar-->
@@ -29,10 +10,10 @@
     	<div class="collapse navbar-collapse" id="navbarNavDropdown">
       		<ul class="navbar-nav">
         		<li class="nav-item">
-          			<a class="nav-link" href="">Episodes<span class="sr-only"></span></a>
+          			<a class="nav-link" href="?action=episodes">Episodes<span class="sr-only"></span></a>
         		</li>
         		<li class="nav-item">
-          			<a class="nav-link" href="">Jean Forteroche<span class="sr-only"></span></a>
+          			<a class="nav-link" href="?action=bio">Jean Forteroche<span class="sr-only"></span></a>
         		</li>
       		</ul>
     	</div>
@@ -98,58 +79,3 @@
     </div>
   </nav>
 </header>
-    <!--Hero-->
-    <section class="herosection sectionmargin">
-      <div class="hero">
-      	<div class="herocaption center">
-        	<img src="images/alaska.jpg" alt="Alaska image">
-          		<h1>Un billet simple pour l'Alaska</h1>
-          		<p>Un roman écrit par Jean Forteroche</p>
-        </div>
-      </div>
-    </section>
-    <!--Episodes-->
-    <section class="container sectionmargin row justify-content-around" id="episodes">
-          <div class="card col-4">
-        <img class="card-img-top" src="images/alaska.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">CHAPITRE 1</h5>
-          <p class="card-text"><p>Lorem ipsum...</p>
-          <a class="btn btn-primary" href="">Lire l'article</a>
-        </div>
-      </div>
-          <div class="card col-4">
-        <img class="card-img-top" src="images/alaska.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">CHAPITRE 2</h5>
-          <p class="card-text"><p>Lorem ipsum...</p>
-          <a class="btn btn-primary" href="">Lire l'article</a>
-        </div>
-      </div>
-          <div class="card col-4">
-        <img class="card-img-top" src="images/alaska.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">CHAPITRE 3</h5>
-          <p class="card-text"><p>Lorem ipsum...</p>
-          <a class="btn btn-primary" href="">Lire l'article</a>
-        </div>
-      </div>
-        </section>
-    <!--Biography-->
-    <section class="sectionmargin container" id="bio">
-      <div class="jumbotron">
-        <h1 class="display-4">Jean Forteroche</h1>
-        <p class="lead">Auteur et écrivain Canadien contemporain de romans et de nouvelles à succès.</p>
-        <hr class="my-4">
-        <p>Sed vitae venenatis metus, in condimentum nisi. Etiam finibus tortor sit amet lacus hendrerit commodo. Donec finibus accumsan rhoncus. Nulla maximus gravida lectus vitae imperdiet. Suspendisse aliquet metus ullamcorper, suscipit justo ut, malesuada neque. Aenean vitae sapien ipsum. Sed aliquet elementum tempus.</p>
-        <a class="btn btn-primary btn-lg" href="?action=bio" role="button">Lire la suite</a>
-      </div>
-    </section>
-    <!--Footer-->
-    <footer>
-	  <script  src="js/jquery.min.js"></script>
-	  <script  src="js/bootstrap.bundle.min.js"></script>
-	  <script  src="js/bootstrap.min.js"></script>
-	</footer>
-</body>
-</html>
