@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <?php
@@ -19,6 +18,16 @@
           require'header.php';
         }
       ?>
+      <!--Background-image-->
+    <section class="herosection sectionmargin">
+      <div class="hero">
+        <div class="herocaption center">
+          <img src="images/alaska.jpg" alt="Alaska image">
+              <h1>Un billet simple pour l'Alaska</h1>
+              <p>Un roman écrit par Jean Forteroche</p>
+        </div>
+      </div>
+    </section>
       <section class="container paddingtop">
         <div>
           <h1><?=$post['title']?></h1>

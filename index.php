@@ -1,4 +1,10 @@
 <?php
+  
+  if (empty($_SESSION['id'])) {
+    session_start();
+    $_SESSION['id'] = session_id();
+  } 
+  
   require'controller/ControllerHome.php';
   require'controller/ControllerAdmin.php';
   if (isset($_GET['action'])) {

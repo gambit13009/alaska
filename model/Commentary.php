@@ -9,7 +9,7 @@
       $commentary->execute(array($postId));
       return $commentary;
     }
-/*Permet de lister les commentaires signaler*/
+/*Permet de lister les commentaires signalés*/
     public function listReportedCommentary() {
       $db = Database::getConnection();
       $commentary = $db->prepare('SELECT * FROM comment WHERE report = 1 ORDER BY id_post');
@@ -18,9 +18,8 @@
     }
 /*Permet de crée un commentaire*/
     public function createCommentary() {
-      session_start();
       $db = Database::getConnection();
-      if (isset($_SESSION['id'])) {
+      if (!empty($_SESSION['id'])) {
         if (isset($_POST['comment'])) {
           if(!empty($_POST['comment'])){
             $postCommentary = htmlspecialchars($_POST['comment']);
@@ -31,13 +30,13 @@
             $info = "Votre commentaire a bien été crée";
           }
           else {
-          $info = "Veuillez remplir tous les champs";
+            $info = "Veuillez remplir tous les champs";
+          }
         }
       }
-    }
-    else {
-      $info ="Vous devez être connecté pour réaliser cette action";
-    }
+      else {
+        $info ="Pas de session disponible";
+      }
       if (isset($info)) {
         echo $info;
       }

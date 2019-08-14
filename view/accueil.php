@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <!--Head-->
@@ -22,7 +21,7 @@
         require'header.php';
       }
     ?>
-    <!--Hero-->
+    <!--Background-image-->
     <section class="herosection sectionmargin">
       <div class="hero">
         <div class="herocaption center">
@@ -33,9 +32,8 @@
       </div>
     </section>
     <!--Episodes-->
-
     <section class="container sectionmargin row justify-content-around" id="episodes">
-      <h1 class="articles container">Accès aux articles</h1>  
+      <h1 class="articles container">Articles les plus récents</h1>  
       <?php while($p = $post->fetch()) { ?>
       <div class="card col-4">
         <img class="card-img-top" src="images/alaska.jpg" alt="Card image cap">

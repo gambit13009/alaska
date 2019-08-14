@@ -61,10 +61,10 @@
       $post = $db->query('SELECT * FROM post ORDER BY id ASC');
       return $post;
     }
-    /*Permet de récupèrer les trois premiers articles*/
+    /*Permet de récupèrer les trois derniers articles*/
     public function getLastPosts() {
       $db = Database::getConnection();
-      $post = $db->query('SELECT * FROM post ORDER BY id ASC LIMIT 3');
+      $post = $db->query('SELECT * FROM post ORDER BY id DESC LIMIT 3');
       return $post;
     }
     /*Permet de supprimer un article*/

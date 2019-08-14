@@ -24,10 +24,10 @@
 .marginlist {
   margin-bottom: 1em;
   margin-right: 1rem;
+  margin-top: 8rem;
 }
 
 .paddingtop {
-    padding-top: 9em;
     display: inline-flex;
 }
 
@@ -115,10 +115,6 @@ p {
 
 .card-title {
   margin-left: .25rem;
-}
-
-#episodes p {
-  padding: 0 1.2rem 0 .25rem;
 }
 
 .btn-primary {
