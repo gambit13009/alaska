@@ -23,10 +23,17 @@
 
 .marginlist {
   margin-bottom: 1em;
+  margin-right: 1rem;
 }
 
 .paddingtop {
     padding-top: 9em;
+    display: inline-flex;
+}
+
+.paddingtop h1 {
+  background: #ADD8E6;
+  padding: 1rem;
 }
 
 .titlestyle {
@@ -37,6 +44,15 @@
 .textcolor {
   color:#e9ecef;
 }
+
+h1 {
+  margin: 0 .25rem;
+}
+
+p {
+  padding: 0 .25rem;
+}
+
 /*-----Header-----*/
 
 .navbarfixed {
@@ -91,9 +107,22 @@
 .card {
   width: 18rem;
 }
+
 .card-img-top {
   margin-top: 1em;
   border-radius: .25rem;
+}
+
+.card-title {
+  margin-left: .25rem;
+}
+
+#episodes p {
+  padding: 0 1.2rem 0 .25rem;
+}
+
+.btn-primary {
+  margin-left: .25rem;
 }
 
 .marginheader {

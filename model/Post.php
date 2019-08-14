@@ -58,13 +58,13 @@
     /*Permet de lister les articles*/
     public function listPost() {
       $db = Database::getConnection();
-      $post = $db->query('SELECT * FROM post ORDER BY id DESC');
+      $post = $db->query('SELECT * FROM post ORDER BY id ASC');
       return $post;
     }
-    /*Permet de récupèrer les trois article les plus récents*/
+    /*Permet de récupèrer les trois premiers articles*/
     public function getLastPosts() {
       $db = Database::getConnection();
-      $post = $db->query('SELECT * FROM post ORDER BY id DESC LIMIT 3');
+      $post = $db->query('SELECT * FROM post ORDER BY id ASC LIMIT 3');
       return $post;
     }
     /*Permet de supprimer un article*/
