@@ -41,8 +41,10 @@
                   Veuillez saisir votre commentaire
                 </div>
                 <div class="modal-body">
-                  <form method="post" action="index.php?action=comment&id=<?= $post['id'] ?>">
+                  <form method="post" action="index.php?action=comment&id=<?php echo $post['id']?>&pseudo=$_POST['pseudo']&comment=$_POST['comment']">
                     <div class="form-group">
+                      <label for="alias">Pseudo</label>
+                      <input type="text" name="pseudo"></input>
                       <label for="commentArea">Commentaire</label>
                       <textarea class="form-control" id="commentArea" name="comment" rows="3"></textarea>
                     </div>

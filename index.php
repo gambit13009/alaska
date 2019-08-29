@@ -75,7 +75,7 @@
         $controller->adminView();
       }
       else {
-        echo"Vous n'êtes pas administrateur";
+        echo "Vous n'êtes pas administrateur";
       }
     }
     elseif ($_GET['action'] == 'bio') {

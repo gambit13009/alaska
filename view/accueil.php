@@ -31,7 +31,7 @@
         </div>
       </div>
     </section>
-    <!--Episodes-->
+    <!--Articles-->
     <section class="container sectionmargin row justify-content-around" id="episodes">
       <h1 class="articles container">Articles les plus récents</h1>  
       <?php while($p = $post->fetch()) { ?>
@@ -45,7 +45,7 @@
       </div>
         <?php } ?>  
         </section>
-    <!--Biography-->
+    <!--Biographie-->
     <section class="sectionmargin container" id="bio">
       <div class="jumbotron">
         <h1 class="display-4">Jean Forteroche</h1>

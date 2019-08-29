@@ -16,7 +16,7 @@
       }
       return $post;
     }
-    /*Permet de crée un article*/
+    /*Permet de créer un article*/
     public function createPost() {
       $db = Database::getConnection();
       if (isset($_POST['title'], $_POST['postText'])) {
