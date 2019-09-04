@@ -6,13 +6,8 @@
   ?>
     <body>
       <?php
-        if (isset($_SESSION['alias'])) {
-          if ($_SESSION['admin'] == 1) {
-            require'adminheader.php';
-          }
-          else{
-            require'logedheader.php';
-          }
+        if ($_SESSION['admin']) {
+          require'adminheader.php';
         }
         else {
           require'header.php';
@@ -33,7 +28,7 @@
           <h1><?=$post['title']?></h1>
           <p><?=$post['message']?></p>
         
-          <button class="btn btn-primary titlestyle" type="button" data-toggle="modal" data-target="#comment">Ecrire un commentaire</button>
+          <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#comment">Ecrire un commentaire</button>
           <div id="comment" class="modal fade" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">

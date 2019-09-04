@@ -15,7 +15,7 @@
         </li>
       </ul>
     </div>
-      <p class="textcolor pheader">Bonjour <?=$_SESSION['alias']?></p>
+      <p class="textcolor pheader">Bonjour</p>
     <!--Deconnection-->
       <form method="post" action="index.php?action=logout">
         <input type="submit" class="btn btn-outline-danger marginheader" name="buttonLogout" value="Déconnexion"></input>

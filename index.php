@@ -3,6 +3,7 @@
   if (empty($_SESSION['id'])) {
     session_start();
     $_SESSION['id'] = session_id();
+    $_SESSION['admin'] = false;
   } 
   
   require'controller/ControllerHome.php';
@@ -69,8 +70,7 @@
       }
     }
     elseif ($_GET['action'] == 'admin') {
-      session_start();
-      if ($_SESSION['admin'] == 1) {
+      if ($_SESSION['admin']) {
         $controller = new ControllerAdmin();
         $controller->adminView();
       }

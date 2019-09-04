@@ -15,7 +15,7 @@
         </li>
       </ul>
     </div>
-      <p class="textcolor pheader">Bonjour <?=$_SESSION['alias']?></p>
+      <p class="textcolor pheader">Bonjour</p>
     <!--Centre d'administration-->
       <form method="post" action="index.php?action=admin">
         <input type="submit" class="btn btn-outline-primary marginheader" name="buttonAdmin" value="Centre d'administration"></input>

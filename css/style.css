@@ -33,12 +33,23 @@
 
 .paddingtop h1 {
   background: #ADD8E6;
-  padding: 1rem;
+  border: solid 1px lightgrey;
+}
+
+.paddingtop .titlestyle {
+  padding: 8rem 1rem;
+  margin-top: 5rem;
 }
 
 .titlestyle {
-    margin-bottom: 1em;
-    text-align: center;;
+    text-align: center;
+    padding: 8rem 1rem;
+    margin-top: 5rem;
+}
+
+form {
+  margin-top: 5rem;
+  margin-left: 1rem;
 }
 
 .textcolor {

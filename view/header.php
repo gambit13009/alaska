@@ -17,40 +17,9 @@
         		</li>
       		</ul>
     	</div>
-    <!--Inscription-->
-    <div>
-      <button class="btn btn-outline-warning" type="button" data-toggle="modal" data-target="#sign">Inscription</button>
-      <div id="sign" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header center">
-              Veuillez entrer vos identifiants d'inscription
-            </div>
-            <div class="modal-body">
-              <form method="post" action="index.php?action=signin">
-                <div class="form-group">
-                  <label>Pseudo</label>
-                  <input type="text" class="form-control" name="alias" placeholder="Pseudo">
-                </div>
-                <div class="form-group">
-                  <label>Adresse mail</label>
-                  <input type="email" class="form-control" name="mail" placeholder="Adresse mail">
-                </div>
-                <div class="form-group">
-                  <label>Mot de passe</label>
-                  <input type="password" class="form-control" name="pass" placeholder="Mot de passe">
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal" name="button">Annuler</button>
-                <input type="submit" class="btn btn-success" name="buttonSign"></input>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+    
       <!--Connection-->
-      <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#login">Connexion</button>
+      <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#login">Connection</button>
       <div id="login" class="modal fade" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">

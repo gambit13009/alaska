@@ -9,13 +9,8 @@
   <body class="sectionbackground">
     <!--Header-->
     <?php
-      if (isset($_SESSION['alias'])) {
-        if ($_SESSION['admin'] == 1) {
-          require'adminheader.php';
-        }
-        else{
-          require'logedheader.php';
-        }
+      if ($_SESSION['admin']) {
+        require'adminheader.php';
       }
       else {
         require'header.php';

@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
     <?php
@@ -7,17 +6,12 @@
       ?>
   <body>
     <?php
-      if (isset($_SESSION['alias'])) {
-        if ($_SESSION['admin'] == 1) {
+        if ($_SESSION['admin']) {
           require'adminheader.php';
         }
-        else{
-          require'logedheader.php';
+        else {
+          require'header.php';
         }
-      }
-      else {
-        require'header.php';
-      }
     ?>
     <section class="container paddingtop">
       <h1 class="titlestyle">Centre d'administration</h1>
