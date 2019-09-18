@@ -19,7 +19,7 @@
     	</div>
     
       <!--Connection-->
-      <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#login">Connection</button>
+      <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#login">Connexion</button>
       <div id="login" class="modal fade" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">
