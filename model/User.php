@@ -8,7 +8,6 @@
     }
     /*Permet de connecter un utilisateur*/
     public function loginUser() {
-      var_dump('connect');
       $db = Database::getConnection();
       if(isset($_POST['buttonLogin'])) {
         $mail = htmlspecialchars($_POST['mail']);
@@ -17,11 +16,10 @@
           $requser = $db->prepare("SELECT * FROM user WHERE email = ?");
           $result = $requser->execute(array($mail));
           $userinfo = $requser->fetch();
-          var_dump($_SESSION['session_ok']);
           if ($pass = $userinfo['password']) {
-            var_dump('--ok');
-            $_SESSION['admin'] = true;
-            header("Location: index.php?action=admin");
+            $_SESSION['admin'] = 'ok';
+            header('Location: index.php?action=admin');
+            exit();
             }
            else {
              echo "Mail ou mot de passe incorrect";

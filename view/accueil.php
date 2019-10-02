@@ -9,12 +9,15 @@
   <body class="sectionbackground">
     <!--Header-->
     <?php
-      if ($_SESSION['admin']) {
-        require'adminheader.php';
-      }
-      else {
-        require'header.php';
-      }
+    //var_dump($_SESSION['admin']);
+        if ($_SESSION['admin'] == 'ok') {
+          var_dump('1');
+          require'adminheader.php';
+        }
+        else {
+          var_dump('2');
+          require'header.php';
+        }
     ?>
     <!--Background-image-->
     <section class="herosection sectionmargin">

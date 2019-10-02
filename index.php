@@ -1,11 +1,26 @@
 <?php
-  
-  if (!isset($_SESSION['session_ok'])) {
+  /*var_dump('-------index.php');
+  if (isset($_GET['action'])) {
+    var_dump($_GET['action']);
+  }
+  if (isset($_GET['action']) && $_GET['action'] = 'adminok') {
+    $_GET['action'] = 'admin';
+  }
+  if (isset($_SESSION['session_ok'])) {
+    var_dump($_SESSION['session_ok']);
+  }
+  if ($_SESSION['session_ok'] !== 'ok') {
     session_start();
     $_SESSION['session_ok'] = 'ok';
-    $_SESSION['admin'] = false;
+    $_SESSION['admin'] = 'pok';
+    $_GET['action'] = null;
+    var_dump('init');
   } 
-  
+  var_dump($_SESSION['admin']);
+  var_dump($_SESSION['session_ok']);
+  if (isset($_GET['action'])) {
+    var_dump($_GET['action']);
+  }*/
   require'controller/ControllerHome.php';
   require'controller/ControllerAdmin.php';
   if (isset($_GET['action'])) {
@@ -16,13 +31,9 @@
     }
     elseif ($_GET['action'] == 'login') {
       var_dump('---2---');
+      var_dump($_SESSION['admin']);
       $controller = new ControllerHome();
       $controller->login();
-    }
-    elseif ($_GET['action'] == 'signin') {
-      var_dump('---3---');
-      $controller = new ControllerHome();
-      $controller->signuser();
     }
     elseif ($_GET['action'] == 'comment') {
       var_dump('---4---');
@@ -80,9 +91,9 @@
       }
     }
     elseif ($_GET['action'] == 'admin') {
-      var_dump($_SESSION['admin']);
       var_dump('---11---');
-      if ($_SESSION['admin'] = true) {
+      if ($_SESSION['admin'] = 'ok') {
+        var_dump($_SESSION['admin']);
         $controller = new ControllerAdmin();
         $controller->adminView();
       }
@@ -147,6 +158,7 @@
     }
   }
   else {
+    var_dump('---19---');
     $controller = new ControllerHome();
     $controller->homeView();
   }

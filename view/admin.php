@@ -6,11 +6,12 @@
       ?>
   <body>
     <?php
-        if ($_SESSION['admin'] = false) {
-           require 'index.php';
+        if ($_SESSION['admin'] = 'ok') {
+          require'adminheader.php';
         }
         else {
-          require 'adminheader.php';
+          require'header.php';
+        }
     ?>
     <section class="container paddingtop">
       <h1 class="titlestyle">Centre d'administration</h1>
@@ -44,7 +45,6 @@
       </div>
     </section>
     <?php require'footer.php'; ?>
-  <?php 
-  } ?>
+  
   </body>
 </html>

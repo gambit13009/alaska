@@ -15,10 +15,6 @@
         </li>
       </ul>
     </div>
-    <!--Centre d'administration-->
-      <form method="post" action="index.php?action=admin">
-        <input type="submit" class="btn btn-outline-primary marginheader" name="buttonAdmin" value="Centre d'administration"></input>
-      </form>
     <!--Deconnexion-->
       <form method="post" action="index.php?action=logout">
         <input type="submit" class="btn btn-outline-danger marginheader" name="buttonLogout" value="Déconnexion"></input>

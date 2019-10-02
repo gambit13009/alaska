@@ -6,11 +6,11 @@
     ?>
     <body>
       <?php
-        if ($_SESSION['admin']) {
-          require'adminheader.php';
+        if ($_SESSION['admin'] = false) {
+           require 'index.php';
         }
         else {
-          require'header.php';
+          require 'adminheader.php';
         }
       ?>
       <section class="container paddingtop">

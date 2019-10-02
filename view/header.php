@@ -18,7 +18,7 @@
       		</ul>
     	</div>
     
-      <!--Connection-->
+      <!--Connexion-->
       <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#login">Connexion</button>
       <div id="login" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -27,6 +27,10 @@
               Veuillez entrer vos identifiants
             </div>
             <div class="modal-body">
+              <?php var_dump('-----valform'); 
+              /*var_dump($_SESSION['admin']);
+              var_dump($_SESSION['session_ok']);*/
+              ?>
               <form method="post" action="index.php?action=login">
                 <div class="form-group">
                   <label>Mail</label>

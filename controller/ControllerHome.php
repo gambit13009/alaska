@@ -1,17 +1,10 @@
 <?php
   class ControllerHome {
     public function homeView() {
-      require'model/User.php';
       require'model/Post.php';
       $lastposts = new Post();
       $post = $lastposts->getLastPosts();
       require'view/accueil.php';
-    }
-    public function signuser() {
-      require'model/User.php';
-      require'model/Post.php';
-      $userclass = new User();
-      $user = $userclass->sign();
     }
     public function bioView() {
       require'model/User.php';
@@ -35,13 +28,6 @@
       require'view/episodes.php';
     }
     public function listEpisodes() {
-      require'model/User.php';
-      require'model/Post.php';
-      $listpost = new Post();
-      $post = $listpost->listPost();
-      require'view/episodes.php';
-    }
-    public function sign() {
       require'model/User.php';
       require'model/Post.php';
       $listpost = new Post();
