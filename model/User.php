@@ -1,12 +1,13 @@
 <?php
   require_once'Database.php';
   class User extends Database {
-    /*Permet de déconnecter l'utilisateur*/
+    /*Permet de déconnecter l'administrateur*/
     public function disconnect() {
       $_SESSION['admin'] = 'pok';
-      header('Location: routeur.php');
+      session_destroy();
+      header('Location: index.php');
     }
-    /*Permet de connecter un utilisateur*/
+    /*Permet de connecter l'administrateur*/
     public function loginUser() {
       $db = Database::getConnection();
       if(isset($_POST['buttonLogin'])) {

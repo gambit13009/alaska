@@ -7,7 +7,7 @@
   <body>
     <?php
       if ($_SESSION['admin'] = 'pok') {
-           require 'index.php';
+           require 'header.php';
         }
         else {
           require 'adminheader.php';
