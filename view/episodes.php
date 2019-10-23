@@ -6,7 +6,7 @@
     ?>
     <body>
       <?php
-        if ($_SESSION['admin'] = false) {
+        if ($_SESSION['admin'] = 'pok') {
            require 'index.php';
         }
         else {
@@ -22,7 +22,7 @@
             <?php
             if (strlen($p['message']) > 99) { ?>
               <p class="card-text"><p><?= $p['message'] = mb_substr($p['message'], 0, strpos($p['message'], ' ', 100));?>...</p>
-              <a class="btn btn-primary" href="?action=article&id=<?= $p['id'] ?>">Lire l'article</a>
+              <a class="btn btn-primary" href="routeur.php?action=article&id=<?= $p['id'] ?>">Lire l'article</a>
             <?php
             } 
             else { ?>

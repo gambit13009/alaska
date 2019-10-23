@@ -9,22 +9,20 @@
   <body class="sectionbackground">
     <!--Header-->
     <?php
-    //var_dump($_SESSION['admin']);
-        if ($_SESSION['admin'] == 'ok') {
-          var_dump('1');
+      require'header.php';
+      if (isset($_SESSION['admin'])) {
+        if ($_SESSION['admin'] == 'ok')
+        {
           require'adminheader.php';
         }
-        else {
-          var_dump('2');
-          require'header.php';
-        }
+      };
     ?>
     <!--Background-image-->
     <section class="herosection sectionmargin">
       <div class="hero">
         <div class="herocaption center">
           <img src="images/alaska.jpg" alt="Alaska image">
-              <h1>Un billet simple pour l'Alaska</h1>
+                <h1>Un billet simple pour l'Alaska</h1>
               <p>Un roman écrit par Jean Forteroche</p>
         </div>
       </div>
@@ -38,7 +36,7 @@
         <div class="card-body">
           <h5 class="card-title"><?= $p['title'] ?></h5>
           <p class="card-text"><p><?= $p['message'] = mb_substr($p['message'], 0, strpos($p['message'], ' ', 100));?>...</p>
-          <a class="btn btn-primary" href="?action=article&id=<?= $p['id'] ?>">Lire l'article</a>
+          <a class="btn btn-primary" href="routeur.php?action=article&id=<?= $p['id'] ?>">Lire l'article</a>
         </div>
       </div>
         <?php } ?>  
@@ -50,7 +48,7 @@
         <p class="lead">Auteur et écrivain Canadien contemporain de romans et de nouvelles à succès.</p>
         <hr class="my-4">
         <p>Sed vitae venenatis metus, in condimentum nisi. Etiam finibus tortor sit amet lacus hendrerit commodo. Donec finibus accumsan rhoncus. Nulla maximus gravida lectus vitae imperdiet. Suspendisse aliquet metus ullamcorper, suscipit justo ut, malesuada neque. Aenean vitae sapien ipsum. Sed aliquet elementum tempus.</p>
-        <a class="btn btn-primary btn-lg" href="?action=bio" role="button">Lire la suite</a>
+        <a class="btn btn-primary btn-lg" href="routeur.php?action=bio" role="button">Lire la suite</a>
       </div>
     </section>
      <!--Footer-->

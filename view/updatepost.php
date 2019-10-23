@@ -6,7 +6,7 @@
 ?>
   <body>
     <?php
-      if ($_SESSION['admin'] = false) {
+      if ($_SESSION['admin'] = 'pok') {
            require 'index.php';
         }
         else {

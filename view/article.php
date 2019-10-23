@@ -6,7 +6,7 @@
   ?>
     <body>
       <?php
-        if ($_SESSION['admin'] = false) {
+        if ($_SESSION['admin'] = 'pok') {
            require 'index.php';
         }
         else {
@@ -36,7 +36,7 @@
                   Veuillez saisir votre commentaire
                 </div>
                 <div class="modal-body">
-                  <form method="post" action="index.php?action=comment&id=<?php echo $post['id']?>&pseudo=$_POST['pseudo']&comment=$_POST['comment']">
+                  <form method="post" action="routeur.php?action=comment&id=<?php echo $post['id']?>&pseudo=$_POST['pseudo']&comment=$_POST['comment']">
                     <div class="form-group">
                       <label for="alias">Pseudo</label>
                       <input type="text" name="pseudo"></input>
@@ -62,7 +62,7 @@
             <div class="card-body">
               <blockquote class="blockquote mb-0">
                 <p><?= $c['comment_text'] ?></p>
-                <a href="index.php?action=report&id=<?= $c['c_id'] ?>" class="btn btn-danger">Signaler</a>
+                <a href="routeur.php?action=report&id=<?= $c['c_id'] ?>" class="btn btn-danger">Signaler</a>
               </blockquote>
             </div>
           </div>

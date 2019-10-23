@@ -3,17 +3,17 @@
 
   <!--Navbar-->
   	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    	<a class="navbar-brand" href="index.php">Billet simple pour l'Alaska</a>
+    	<a class="navbar-brand" href="routeur.php">Billet simple pour l'Alaska</a>
     	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       		<span class="navbar-toggler-icon"></span>
     	</button>
     	<div class="collapse navbar-collapse" id="navbarNavDropdown">
       		<ul class="navbar-nav">
         		<li class="nav-item">
-          			<a class="nav-link" href="?action=episodes">Articles<span class="sr-only"></span></a>
+          			<a class="nav-link" href="routeur.php?action=articles">Articles<span class="sr-only"></span></a>
         		</li>
         		<li class="nav-item">
-          			<a class="nav-link" href="?action=bio">Jean Forteroche<span class="sr-only"></span></a>
+          			<a class="nav-link" href="routeur.php?action=bio">Jean Forteroche<span class="sr-only"></span></a>
         		</li>
       		</ul>
     	</div>
@@ -27,11 +27,7 @@
               Veuillez entrer vos identifiants
             </div>
             <div class="modal-body">
-              <?php var_dump('-----valform'); 
-              /*var_dump($_SESSION['admin']);
-              var_dump($_SESSION['session_ok']);*/
-              ?>
-              <form method="post" action="index.php?action=login">
+              <form method="post" action="routeur.php?action=login">
                 <div class="form-group">
                   <label>Mail</label>
                   <input type="text" class="form-control" name="mail" placeholder="Mail">

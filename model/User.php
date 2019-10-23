@@ -3,8 +3,8 @@
   class User extends Database {
     /*Permet de déconnecter l'utilisateur*/
     public function disconnect() {
-      $_SESSION['admin'] = false;
-      header('Location: index.php');
+      $_SESSION['admin'] = 'pok';
+      header('Location: routeur.php');
     }
     /*Permet de connecter un utilisateur*/
     public function loginUser() {
@@ -18,8 +18,7 @@
           $userinfo = $requser->fetch();
           if ($pass = $userinfo['password']) {
             $_SESSION['admin'] = 'ok';
-            header('Location: index.php?action=admin');
-            exit();
+            header('Location: routeur.php?action=admin');
             }
            else {
              echo "Mail ou mot de passe incorrect";

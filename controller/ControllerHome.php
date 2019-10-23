@@ -25,14 +25,14 @@
       require'model/Post.php';
       $lastposts = new Post();
       $post = $lastposts->listPost();
-      require'view/episodes.php';
+      require'view/articles.php';
     }
-    public function listEpisodes() {
+    public function listArticles() {
       require'model/User.php';
       require'model/Post.php';
       $listpost = new Post();
       $post = $listpost->listPost();
-      require'view/episodes.php';
+      require'view/articles.php';
     }
     public function login() {
       require'model/User.php';
@@ -43,10 +43,6 @@
       require'model/User.php';
       $logout = new User();
       $logout->disconnect();
-    }
-    public function logedUser() {
-      require'model/User.php';
-      $login = new User();
     }
     public function getComment() {
       require'model/User.php';
