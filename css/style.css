@@ -34,6 +34,7 @@
 .paddingtop h1 {
   background: #ADD8E6;
   border: solid 1px lightgrey;
+  margin-top: 3.5rem;
 }
 
 .paddingtop .titlestyle {

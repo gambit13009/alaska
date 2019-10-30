@@ -25,13 +25,15 @@
           $postMessage = ($_POST['postText']);
           $insert = $db->prepare('INSERT INTO post(title, message, creation_date) VALUES (?, ?,NOW())');
           $insert->execute(array($postTitle, $postMessage));
-          $info = "Votre article a bien été crée";
+          $_SESSION['info'] = "Votre article a bien été crée";
+          header('Location: index.php');
         } else {
-          $info = "Veuillez remplir tous les champs";
+          $_SESSION['info'] = "Veuillez remplir tous les champs";
+          header('Location: index.php');
         }
       }
-      if (isset($info)) {
-        echo $info;
+      if (isset($_SESSION['info'])) {
+        echo $_SESSION['info'];
       }
     }
     /*Permet de modifier un article, il récupère les informations de l'article puis les modifie*/
@@ -45,14 +47,16 @@
           $post_message =($_POST['postText']);
           $update = $db->prepare('UPDATE post SET title = ?, message = ? WHERE id = ?');
           $update->execute(array($post_title, $post_message, $update_post));
-          $info = "Votre article a bien été modifié";
+          $_SESSION['info'] = "Votre article a bien été modifié";
+          header('Location: index.php');
           }
         } else {
-          $info = "Veuillez remplir tous les champs";
+          $_SESSION['info'] = "Veuillez remplir tous les champs";
+          header('Location: index.php');
         }
       }
-      if (isset($info)) {
-        echo $info;
+      if (isset($_SESSION['info'])) {
+        echo $_SESSION['info'];
       }
     }
     /*Permet de lister les articles*/
@@ -76,13 +80,15 @@
         $delete->execute(array($delete_post));
         $delete_comment = $db->prepare('DELETE FROM comment WHERE id_post = ?');
         $delete_comment->execute(array($delete_post));
-        $info = "Votre article a bien été supprimé";
+        $_SESSION['info'] = "Votre article a bien été supprimé";
+        header('Location: index.php');
       }
       else {
-        $info = "Une erreur est survenue";
+        $_SESSION['info'] = "Une erreur est survenue";
+        header('Location: index.php');
       }
-      if (isset($info)) {
-        echo $info;
+      if (isset($_SESSION['info'])) {
+        echo $_SESSION['info'];
       }
     }
   }

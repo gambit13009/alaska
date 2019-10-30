@@ -6,12 +6,15 @@
     ?>
     <body>
       <?php
-        if ($_SESSION['admin'] = 'pok') {
-           require 'header.php';
+         if (isset($_SESSION['admin'])) {
+        if ($_SESSION['admin'] == 'ok') {
+          require'adminheader.php';  
+        } else {
+          require'header.php';  
         }
-        else {
-          require 'adminheader.php';
-        }
+      } else {
+        require'header.php';
+      }
       ?>
       <section class="container paddingtop">
         <?php while($p = $post->fetch()) { ?>

@@ -55,15 +55,15 @@
         </div>
         <div>
         <?php 
-          foreach ($commentary as $c) { ?>
+          foreach (array($commentary) as $c) { ?>
           <div class="card">
             <div class="card-header">
-              <?php= $c['alias'] ?>
+              <?=$c['alias_user'] ?>
             </div>
-            <div class="card-body">
+            <div class="card-body"> 
               <blockquote class="blockquote mb-0">
-                <p><?php= $c['comment_text'] ?></p>
-                <a href="index.php?action=report&id=<?php= $c['c_id'] ?>" class="btn btn-danger">Signaler</a>
+                <p><?=$c['comment_text'] ?></p>
+                <a href="index.php?action=report&id=<?= $c['id'] ?>" class="btn btn-danger">Signaler</a>
               </blockquote>
             </div>
           </div>

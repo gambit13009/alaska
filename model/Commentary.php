@@ -27,14 +27,16 @@
           $postId = ($_GET['id']);
           $insert = $db->prepare('INSERT INTO comment(alias_user, id_post, comment_text, comment_date, report) VALUES (?, ?, ?, NOW(), ?)');
           $result = $insert->execute(array($pseudo, $postId, $postCommentary, 'a'));
-          $info = "Votre commentaire a bien été crée";
+          $_SESSION['info'] = "Votre commentaire a bien été crée";
+          header('Location: index.php');
         }
         else {
-          $info = "Veuillez remplir tous les champs";
+          $_SESSION['info'] = "Veuillez remplir tous les champs";
+          header('Location: index.php');
         }
       }
-      if (isset($info)) {
-        echo $info;
+      if (isset($_SESSION['info'])) {
+        echo $_SESSION['info'];
       }
     }
     /*Permet de supprimer un commentaire*/
@@ -44,13 +46,15 @@
         $deleteComment = htmlspecialchars($_GET['id']);
         $delete = $db->prepare('DELETE FROM comment WHERE id = ?');
         $delete->execute(array($deleteComment));
-        $info = "Votre commentaire a bien été supprimé";
+        $_SESSION['info'] = "Votre commentaire a bien été supprimé";
+        header('Location: index.php');
       }
       else {
-        $info = "Une erreur est survenue";
+        $_SESSION['info'] = "Une erreur est survenue";
+        header('Location: index.php');
       }
-      if (isset($info)) {
-        echo $info;
+      if (isset($_SESSION['info'])) {
+        echo $_SESSION['info'];
       }
     }
     /*Permet de valider un commentaire*/
@@ -60,13 +64,15 @@
         $reportId = htmlspecialchars($_GET['id']);
         $report = $db->prepare('UPDATE comment SET report = 0 WHERE id = ?');
         $report->execute(array($reportId));
-        $info = "Votre commentaire a bien été validé";
+        $_SESSION['info'] = "Votre commentaire a bien été validé";
+        header('Location: index.php');
       }
       else {
-        $info = "Une erreur est survenue";
+        $_SESSION['info'] = "Une erreur est survenue";
+        header('Location: index.php');
       }
-      if (isset($info)) {
-        echo $info;
+      if (isset($_SESSION['info'])) {
+        echo $_SESSION['info'];
       }
     }
     /*Permet de signaler un commentaire*/
@@ -76,13 +82,15 @@
         $reportId = htmlspecialchars($_GET['id']);
         $report = $db->prepare('UPDATE comment SET report = 1 WHERE id = ?');
         $report->execute(array($reportId));
-        $info = "Votre commentaire a bien été signalé";
+        $_SESSION['info'] = "Votre commentaire a bien été signalé";
+        header('Location: index.php');
       }
       else {
-        $info = "Une erreur est survenue";
+        $_SESSION['info'] = "Une erreur est survenue";
+        header('Location: index.php');
       }
-      if (isset($info)) {
-        echo $info;
+      if (isset($_SESSION['info'])) {
+        echo $_SESSION['info'];
       }
     }
   }
