@@ -22,7 +22,7 @@
             <?php
             if (strlen($p['message']) > 99) { ?>
               <p class="card-text"><p><?= $p['message'] = mb_substr($p['message'], 0, strpos($p['message'], ' ', 100));?>...</p>
-              <a class="btn btn-primary" href="routeur.php?action=article&id=<?= $p['id'] ?>">Lire l'article</a>
+              <a class="btn btn-primary" href="index.php?action=article&id=<?= $p['id'] ?>">Lire l'article</a>
             <?php
             } 
             else { ?>

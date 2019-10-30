@@ -6,12 +6,15 @@
       ?>
   <body>
     <?php
-        if ($_SESSION['admin'] = 'ok') {
-          require'adminheader.php';
+        if (isset($_SESSION['admin'])) {
+        if ($_SESSION['admin'] == 'ok') {
+          require'adminheader.php';  
+        } else {
+          require'header.php';  
         }
-        else {
-          require'header.php';
-        }
+      } else {
+        require'header.php';
+      }
     ?>
     <section class="container paddingtop">
       <h1 class="titlestyle">Centre d'administration</h1>

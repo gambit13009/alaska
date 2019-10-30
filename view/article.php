@@ -36,7 +36,7 @@
                   Veuillez saisir votre commentaire
                 </div>
                 <div class="modal-body">
-                  <form method="post" action="routeur.php?action=comment&id=<?php echo $post['id']?>&pseudo=$_POST['pseudo']&comment=$_POST['comment']">
+                  <form method="post" action="index.php?action=comment&id=<?php echo $post['id']?>&pseudo=$_POST['pseudo']&comment=$_POST['comment']">
                     <div class="form-group">
                       <label for="alias">Pseudo</label>
                       <input type="text" name="pseudo"></input>
@@ -54,15 +54,16 @@
           </div>
         </div>
         <div>
-          <?php while($c = $commentary->fetch()) { ?>
+        <?php 
+          foreach ($commentary as $c) { ?>
           <div class="card">
             <div class="card-header">
-              <?= $c['alias'] ?>
+              <?php= $c['alias'] ?>
             </div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">
-                <p><?= $c['comment_text'] ?></p>
-                <a href="routeur.php?action=report&id=<?= $c['c_id'] ?>" class="btn btn-danger">Signaler</a>
+                <p><?php= $c['comment_text'] ?></p>
+                <a href="index.php?action=report&id=<?php= $c['c_id'] ?>" class="btn btn-danger">Signaler</a>
               </blockquote>
             </div>
           </div>

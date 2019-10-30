@@ -4,7 +4,6 @@
     /*Permet de déconnecter l'administrateur*/
     public function disconnect() {
       $_SESSION['admin'] = 'pok';
-      session_destroy();
       header('Location: index.php');
     }
     /*Permet de connecter l'administrateur*/
@@ -17,21 +16,21 @@
           $requser = $db->prepare("SELECT * FROM user WHERE email = ?");
           $result = $requser->execute(array($mail));
           $userinfo = $requser->fetch();
-          if ($pass = $userinfo['password']) {
+          if ($pass == $userinfo['password']) {
             $_SESSION['admin'] = 'ok';
-            header('Location: routeur.php?action=admin');
-            }
-           else {
-             echo "Mail ou mot de passe incorrect";
-           }
+            header('Location: index.php?action=admin');
+          } else {
+            $_SESSION['info'] = "Mail ou mot de passe incorrect";
+            header('Location: index.php');
           }
-          else {
-            echo "Tous les champs doivent être complétés";
-          }
+        } else {
+          $_SESSION['info'] = "Tous les champs doivent être complétés";
+          header('Location: index.php');
         }
-        else {
-          echo "Un problème est survenu";
-        }
+      } else {
+        $_SESSION['info'] = "Un problème est survenu";
+        header('Location: index.php');
       }
     }
+  }
 ?>

@@ -1,27 +1,26 @@
 <header class="navbarfixed">
   <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="routeur.php">Billet simple pour l'Alaska</a>
+    <a class="navbar-brand" href="index.php">Billet simple pour l'Alaska</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="routeur.php?action=articles">Articles<span class="sr-only"></span></a>
+          <a class="nav-link" href="index.php?action=articles">Articles<span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="routeur.php?action=bio">Jean Forteroche<span class="sr-only"></span></a>
+          <a class="nav-link" href="index.php?action=bio">Jean Forteroche<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.php?action=admin">Centre d'administration<span class="sr-only"></span></a>
         </li>
       </ul>
     </div>
-    <!--Centre d'administration-->
-      <form method="post" action="routeur.php?action=admin">
-        <input type="submit" class="btn btn-outline-primary marginheader" name="buttonAdmin" value="Centre d'administration"></input>
-      </form>
     <!--Deconnexion-->
-      <form method="post" action="routeur.php?action=logout">
-        <input type="submit" class="btn btn-outline-danger marginheader" name="buttonLogout" value="Déconnexion"></input>
-      </form>
+    <form method="post" action="index.php?action=logout">
+      <input type="submit" class="btn btn-outline-danger marginheader" name="buttonLogout" value="Déconnexion"></input>
+    </form>
   </nav>
 </header>
