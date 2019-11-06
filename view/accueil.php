@@ -37,12 +37,19 @@
         <img class="card-img-top" src="images/alaska.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title"><?= $p['title'] ?></h5>
-          <p class="card-text"><p><?= $p['message'] = mb_substr($p['message'], 0, strpos($p['message'], ' ', 100));?>...</p>
-          <a class="btn btn-primary" href="index.php?action=article&id=<?= $p['id'] ?>">Lire l'article</a>
+          <?php var_dump(strlen($p['message'])); ?>
+            <?php if (strlen($p['message']) < 101) { 
+              var_dump('1'); ?>
+                  <p class="card-text"><p><?= $p['message']; ?></p>
+              <?php } else { 
+                var_dump('2'); ?>
+                <p class="card-text"><p><?= $p['message'] = mb_substr($p['message'], 0, strpos($p['message'], ' ', 100)); ?>...</p>
+              <?php } ?>
+              <a class="btn btn-primary" href="index.php?action=article&id=<?= $p['id'] ?>">Lire l'article</a>
         </div>
       </div>
-        <?php } ?>  
-        </section>
+      <?php } ?>  
+    </section>
     <!--Biographie-->
     <section class="sectionmargin container" id="bio">
       <div class="jumbotron">
