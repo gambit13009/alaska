@@ -21,7 +21,7 @@
         </div>
       </div>
     </section>
-    <section class="container paddingtop">
+    <section class="container paddingtop bio">
       <h1>Biographie de Jean Forteroche</h1>
       <p>Sed vitae venenatis metus, in condimentum nisi. Etiam finibus tortor sit amet lacus hendrerit commodo. Donec finibus accumsan rhoncus. Nulla maximus gravida lectus vitae imperdiet. Suspendisse aliquet metus ullamcorper, suscipit justo ut, malesuada neque. Aenean vitae sapien ipsum. Sed aliquet elementum tempus.
 

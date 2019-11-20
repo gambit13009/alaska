@@ -18,7 +18,7 @@
     ?>
     <section class="container paddingtop">
       <h1 class="titlestyle">Création d'article</h1>
-      <form action="" method="post">
+      <form action="" method="post" style="width: 100%">
         <div class="form-group">
           <label for="title">Titre</label>
           <input type="text" class="form-control" name="title" placeholder="Titre">

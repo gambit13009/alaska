@@ -16,11 +16,11 @@
         require'header.php';
       }
       ?>
-      <section class="container paddingtop">
+      <section class="container paddingtop signal">
         <h1>Liste des commentaires signalés</h1>
         <?php while($c = $commentary->fetch()) { ?>
         <div class="rows">
-          <div class="card marginlist" style="width: 18rem;">
+          <div class="card marginlist">
           <div class="card-body">
             <h5 class="card-title"></h5>
             <p class="card-text"><?= $c['comment_text'] ?></p>
