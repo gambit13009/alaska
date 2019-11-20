@@ -44,7 +44,7 @@
           if(isset($_GET['id']) AND !empty($_GET['id'])) {
             $update_post = htmlspecialchars($_GET['id']);
           $post_title = htmlspecialchars($_POST['title']);
-          $post_message =($_POST['postText']);
+          $post_message = ($_POST['postText']);
           $update = $db->prepare('UPDATE post SET title = ?, message = ? WHERE id = ?');
           $update->execute(array($post_title, $post_message, $update_post));
           $_SESSION['info'] = "Votre article a bien été modifié";

@@ -56,5 +56,21 @@ class ControllerAdmin {
     $commentary = $listcomment->listReportedCommentary();
     require'view/reportedlist.php';
   }
+  // when password lost : creates new one + updates db. Sends mail to user via index
+  public function generateTempPwd($mailtoAddress) {
+      require'model/User.php';
+      $randomInt = rand(1000000, 999999999);
+      $tempPwd = hash('md5', $randomInt);
+      $user = new User();
+      $forterocheMail = $user->getForterocheMail();
+        if ($forterocheMail[0] == $mailtoAddress) {
+            $user->updateTempPwd($tempPwd, $mailtoAddress);
+            return $randomInt;
+        } else {
+            // if adress is not in db, prevents sending mail
+            throw new Exception ('Votre adresse est inconnue dans la base.<br>
+            Cliquez pour revenir à la <a href="index.php?action=login">page de connexion</a>');
+        }
+  }
 }
 ?>

@@ -24,7 +24,7 @@
       <div class="hero">
         <div class="herocaption center">
           <img src="images/alaska.jpg" alt="Alaska image">
-                <h1>Un billet simple pour l'Alaska</h1>
+            <h1>Un billet simple pour l'Alaska</h1>
               <p>Un roman écrit par Jean Forteroche</p>
         </div>
       </div>
@@ -37,12 +37,9 @@
         <img class="card-img-top" src="images/alaska.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title"><?= $p['title'] ?></h5>
-          <?php var_dump(strlen($p['message'])); ?>
-            <?php if (strlen($p['message']) < 101) { 
-              var_dump('1'); ?>
+            <?php if (strlen($p['message']) < 101) { ?>
                   <p class="card-text"><p><?= $p['message']; ?></p>
-              <?php } else { 
-                var_dump('2'); ?>
+              <?php } else { ?>
                 <p class="card-text"><p><?= $p['message'] = mb_substr($p['message'], 0, strpos($p['message'], ' ', 100)); ?>...</p>
               <?php } ?>
               <a class="btn btn-primary" href="index.php?action=article&id=<?= $p['id'] ?>">Lire l'article</a>

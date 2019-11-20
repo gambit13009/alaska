@@ -1,5 +1,5 @@
 <!--Header-->
-    <header class="navbarfixed">
+<header class="navbarfixed">
 
   <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -19,10 +19,12 @@
       </div>
     <!--Gestion des messages d'erreur --> 
     <?php if (isset($_SESSION['info'])) {
-        if ($_SESSION['info'] != null)  {
-          ?><div class='alert-info msginf'><?php echo $_SESSION['info'] ?></div><?php
-        }
-      }
+            if ($_SESSION['info'] != null)  {
+          ?>
+          <div class='alert-info msginf'><?php echo $_SESSION['info'] ?></div>
+          <?php
+            }
+          }
     ?>
     <!--Connexion-->
       <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#login">Connexion</button>
@@ -42,9 +44,29 @@
                   <label>Mot de passe</label>
                   <input type="password" class="form-control" name="pass" placeholder="Mot de passe">
                 </div>
-              <div class="modal-footer">
+                <div class="modal-footer">
+                <button type="button" class="btn btn-forget" name="buttonForget" data-toggle="modal">Mot de passe oublié</button>
+                <!--<div id="forget" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header center">
+                      Veuillez entrer votre adresse mail
+                    </div>
+                    <div class="modal-body">
+                      <form method="post">  
+                        <div class="form-group">
+                          <label>Mail</label>
+                          <input type="text" class="form-control" name="mail" placeholder="Mail">
+                        </div>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" name="button">Annuler</button>
+                        <input type="submit" class="btn btn-success" name="buttonLogin">
+                      </form>
+                    </div>
+                  </div>  
+                </div>  
+                </div>-->
                 <button type="button" class="btn btn-danger" data-dismiss="modal" name="button">Annuler</button>
-                <input type="submit" class="btn btn-success" name="buttonLogin"></input>
+                <input type="submit" class="btn btn-success" name="buttonLogin">
               </div>
             </form>
           </div>

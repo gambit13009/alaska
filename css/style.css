@@ -34,6 +34,7 @@
 .paddingtop h1 {
   background: #ADD8E6;
   border: solid 1px lightgrey;
+  width: 100%;
 }
 
 .paddingtop .titlestyle {
@@ -62,6 +63,10 @@ h1 {
 
 p {
   padding: 0 .25rem;
+}
+
+.tox-tinymce {
+  height: 30rem !important;
 }
 
 /*-----Header-----*/
