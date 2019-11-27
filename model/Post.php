@@ -26,7 +26,6 @@
           $insert = $db->prepare('INSERT INTO post(title, message, creation_date) VALUES (?, ?,NOW())');
           $insert->execute(array($postTitle, $postMessage));
           $_SESSION['info'] = "Votre article a bien été crée";
-          header('Location: index.php');
         } else {
           $_SESSION['info'] = "Veuillez remplir tous les champs";
           header('Location: index.php');
@@ -48,7 +47,6 @@
           $update = $db->prepare('UPDATE post SET title = ?, message = ? WHERE id = ?');
           $update->execute(array($post_title, $post_message, $update_post));
           $_SESSION['info'] = "Votre article a bien été modifié";
-          header('Location: index.php');
           }
         } else {
           $_SESSION['info'] = "Veuillez remplir tous les champs";

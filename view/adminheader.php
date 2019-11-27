@@ -18,6 +18,17 @@
         </li>
       </ul>
     </div>
+ <!--Gestion des messages d'erreur -->
+ <?php if (isset($_SESSION['info']) && $_SESSION['info'] != null)  {
+     ?>
+     <div class='alert-info msginf'><?php echo $_SESSION['info']; ?></div>
+     <?php $_SESSION['info'] = null;
+ } else {
+     ?>
+     <div class='alert-info msginf'></div>
+     <?php
+ }
+ ?>
     <!--Deconnexion-->
     <form method="post" action="index.php?action=logout">
       <input type="submit" class="btn btn-outline-danger marginheader" name="buttonLogout" value="Déconnexion"></input>

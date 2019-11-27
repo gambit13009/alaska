@@ -17,14 +17,16 @@
             </li>
           </ul>
       </div>
-    <!--Gestion des messages d'erreur --> 
-    <?php if (isset($_SESSION['info'])) {
-            if ($_SESSION['info'] != null)  {
-          ?>
-          <div class='alert-info msginf'><?php echo $_SESSION['info'] ?></div>
-          <?php
-            }
-          }
+    <!--Gestion des messages d'erreur -->
+    <?php if (isset($_SESSION['info']) && $_SESSION['info'] != null)  {
+        ?>
+        <div class='alert-info msginf'><?php echo $_SESSION['info']; ?></div>
+        <?php $_SESSION['info'] = null;
+    } else {
+        ?>
+        <div class='alert-info msginf'></div>
+        <?php
+    }
     ?>
     <!--Connexion-->
       <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#login">Connexion</button>

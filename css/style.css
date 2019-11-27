@@ -37,7 +37,6 @@
   background: #ADD8E6;
   border: solid 1px lightgrey;
   width: auto;
-  padding: 1rem;
   text-align: center;
 }
 
@@ -47,7 +46,7 @@
 
 .titlestyle {
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 6rem;
 }
 
 .rows {
@@ -135,4 +134,12 @@ p {
 
 .pheader {
   margin-bottom: 0rem;
+}
+
+/*---Responsive---*/
+
+@media screen and (max-width: 768px) {
+  .herocaption img {
+    margin-top: 6rem;
+  }
 }

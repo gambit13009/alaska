@@ -16,6 +16,7 @@
         require'header.php';
       }
     ?>
+
     <section class="container paddingtop">
       <h1 class="titlestyle">Création d'article</h1>
       <form action="" method="post" style="width: 100%">
@@ -30,6 +31,7 @@
         <input type="submit" class="btn btn-success" name="submit" value="Envoyer"></input>
       </form>
     </section>
+
     <?php require'footer.php'; ?>
   </body>
 </html>
