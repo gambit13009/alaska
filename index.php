@@ -3,7 +3,7 @@
   
   require'controller/ControllerHome.php';
   require'controller/ControllerAdmin.php';
-  
+
   if (isset($_GET['action'])) {
     if ($_GET['action'] == 'articles') {
       $controller = new ControllerHome();
@@ -129,6 +129,10 @@
         $controller = new ControllerHome();
         $controller->homeView();
       }
+    }
+    elseif ($_GET['action'] == 'passwordlost') {
+      $controller = new ControllerAdmin();
+      $controller->generateTempPwd($_POST['forterocheMail']);
     }
   }
   else {

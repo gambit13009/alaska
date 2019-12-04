@@ -136,6 +136,10 @@ p {
   margin-bottom: 0rem;
 }
 
+.material-icons {
+  color: red;
+}
+
 /*---Responsive---*/
 
 @media screen and (max-width: 768px) {

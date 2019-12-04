@@ -24,16 +24,16 @@ function sendContactMail($senderName, $senderAddress, $senderText)
         //Server settings
         $mail->SMTPDebug = false;                                       // Enable verbose debug output
         $mail->isSMTP();                                                // Set mailer to use SMTP
-        $mail->Host       = 'smtp.ionos.com';                           // Specify main and backup SMTP servers
+        $mail->Host       = 'smtp.neuf.fr';                             // Specify main and backup SMTP servers
         $mail->SMTPAuth   = true;                                       // Enable SMTP authentication
-        $mail->Username   = '*************';                            // SMTP username
-        $mail->Password   = '*************';                            // SMTP password
+        $mail->Username   = 'jerome.david@cegetel.net';                 // SMTP username
+        $mail->Password   = 'gambit13009';                              // SMTP password
         $mail->SMTPSecure = 'tls';                                      // Enable TLS encryption, `ssl` also accepted
-        $mail->Port       = 25;                                         // TCP port to connect to
+        $mail->Port       = 465;                                        // TCP port to connect to
 
         //Recipients
-        $mail->setFrom($senderAddress, $senderName);                    // Sender as entered in form
-        $mail->addAddress($forterocheMail[0], 'Jean Forteroche');       // current Forteroche mail registered in db
+        $mail->setFrom($senderAddress, $senderName);                            // Sender as entered in form
+        $mail->addAddress($forterocheMail[0], 'Jean Forteroche');        // current Forteroche mail registered in db
 
         // Content
         $mail->isHTML(true);                                             // Set email format to HTML
@@ -65,16 +65,16 @@ function sendTempPwd($mailtoAddress, $randomInt)
         //Server settings
         $mail->SMTPDebug = false;                                       // Enable verbose debug output
         $mail->isSMTP();                                                // Set mailer to use SMTP
-        $mail->Host       = 'smtp.ionos.com';                           // Specify main and backup SMTP servers
+        $mail->Host       = 'smtp.neuf.fr';                             // Specify main and backup SMTP servers
         $mail->SMTPAuth   = true;                                       // Enable SMTP authentication
-        $mail->Username   = '*************';                            // SMTP username
-        $mail->Password   = '*************';                            // SMTP password
+        $mail->Username   = 'jerome.david@cegetel.net';                 // SMTP username
+        $mail->Password   = 'gambit13009';                              // SMTP password
         $mail->SMTPSecure = 'tls';                                      // Enable TLS encryption, `ssl` also accepted
-        $mail->Port       = 25;                                         // TCP port to connect to
+        $mail->Port       = 465;                                        // TCP port to connect to
 
         //Recipients
-        $mail->setFrom('blog_admin@nusr.me', '[Blog Alaska]');          // admin address for sending new pw
-        $mail->addAddress($mailtoAddress, $mailtoAddress);              // Add a recipient : current Forteroche mail
+        $mail->setFrom('jerome.david@cegetel.net', '[Blog Alaska]');          // admin address for sending new pw
+        $mail->addAddress($mailtoAddress, $mailtoAddress);                                  // Add a recipient : current Forteroche mail
 
         // Content
         $mail->isHTML(true);                                            // Set email format to HTML
