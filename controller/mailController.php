@@ -7,40 +7,39 @@ require ('PHPMailer/src/Exception.php');
 require ('PHPMailer/src/PHPMailer.php');
 require ('PHPMailer/src/SMTP.php');
 
-require_once('model/User.php');
+//require_once('model/User.php');
 
 
-// Sends mail from contact form
+// Envoi de mail à partir du formulaire
 function sendContactMail($senderName, $senderAddress, $senderText)
 {
-    // Instantiation and passing `true` enables exceptions
     $mail = new PHPMailer(true);
-
     $user = new User();
     $forterocheMail = $user->getForterocheMail();
 
     try
     {
-        //Server settings
-        $mail->SMTPDebug = false;                                       // Enable verbose debug output
-        $mail->isSMTP();                                                // Set mailer to use SMTP
-        $mail->Host       = 'smtp.neuf.fr';                             // Specify main and backup SMTP servers
-        $mail->SMTPAuth   = true;                                       // Enable SMTP authentication
-        $mail->Username   = 'jerome.david@cegetel.net';                 // SMTP username
-        $mail->Password   = 'gambit13009';                              // SMTP password
-        $mail->SMTPSecure = 'tls';                                      // Enable TLS encryption, `ssl` also accepted
-        $mail->Port       = 465;                                        // TCP port to connect to
+        //Réglage du serveur d'envoi des mails
+        $mail->SMTPDebug = false;
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.neuf.fr';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'jerome.david@cegetel.net';
+        $mail->Password   = 'gambit13009';
+        $mail->SMTPSecure = 'tls';
+        $mail->Port       = 465;
 
-        //Recipients
-        $mail->setFrom($senderAddress, $senderName);                            // Sender as entered in form
-        $mail->addAddress($forterocheMail[0], 'Jean Forteroche');        // current Forteroche mail registered in db
+        // Destinataire
+        $mail->setFrom($senderAddress, $senderName);
+        $mail->addAddress($forterocheMail[0], 'Jean Forteroche');
 
         // Content
-        $mail->isHTML(true);                                             // Set email format to HTML
+        $mail->isHTML(true);
         $mail->Subject = '[Blog Alaska] Message d\'un visiteur';
         $mail->Body    = $senderText;
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
+        // envoi
         $mail->send();
 
         header('Refresh:4; url=index.php');
@@ -54,34 +53,34 @@ function sendContactMail($senderName, $senderAddress, $senderText)
 
 }
 
-// Sends mail for new password when former one forgotten
+// Envoi d'un mail avec un nouveau mot de passe en cas d'oubli du mot de passe
 function sendTempPwd($mailtoAddress, $randomInt)
 {
-    // Instantiation and passing `true` enables exceptions
     $mail = new PHPMailer(true);
 
     try
     {
-        //Server settings
-        $mail->SMTPDebug = false;                                       // Enable verbose debug output
-        $mail->isSMTP();                                                // Set mailer to use SMTP
-        $mail->Host       = 'smtp.neuf.fr';                             // Specify main and backup SMTP servers
-        $mail->SMTPAuth   = true;                                       // Enable SMTP authentication
-        $mail->Username   = 'jerome.david@cegetel.net';                 // SMTP username
-        $mail->Password   = 'gambit13009';                              // SMTP password
-        $mail->SMTPSecure = 'tls';                                      // Enable TLS encryption, `ssl` also accepted
-        $mail->Port       = 465;                                        // TCP port to connect to
+        // Réglages du serveur d'envoi
+        $mail->SMTPDebug = false;
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.neuf.fr';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'jerome.david@cegetel.net';
+        $mail->Password   = 'gambit13009';
+        $mail->SMTPSecure = 'tls';
+        $mail->Port       = 465;
 
-        //Recipients
-        $mail->setFrom('jerome.david@cegetel.net', '[Blog Alaska]');          // admin address for sending new pw
-        $mail->addAddress($mailtoAddress, $mailtoAddress);                                  // Add a recipient : current Forteroche mail
+        // Destinataire
+        $mail->setFrom('jerome.david@cegetel.net', '[Blog Alaska]');
+        $mail->addAddress($mailtoAddress, $mailtoAddress);
 
-        // Content
-        $mail->isHTML(true);                                            // Set email format to HTML
+        // Contenu
+        $mail->isHTML(true);
         $mail->Subject = '[Blog Alaska] Votre nouveau mot de passe';
         $mail->Body    = 'Bonjour, voici votre mot de passe provisoire : '. $randomInt . '<br>Pour des raisons de sécurité, merci de bien vouloir le changer lors de votre prochaine connexion.<br>Cordialement,<br>l\'administration du site';
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
+        // envoi
         $mail->send();
 
         header('Refresh:5; url=index.php?action=login');

@@ -3,6 +3,7 @@
   
   require'controller/ControllerHome.php';
   require'controller/ControllerAdmin.php';
+  require'controller/mailController.php';
 
   if (isset($_GET['action'])) {
     if ($_GET['action'] == 'articles') {
@@ -130,9 +131,14 @@
         $controller->homeView();
       }
     }
+    elseif ($_GET['action'] == 'pswdlostform') {
+      $controller = new ControllerAdmin();
+      $controller->pswdlostView();
+    }
     elseif ($_GET['action'] == 'passwordlost') {
       $controller = new ControllerAdmin();
-      $controller->generateTempPwd($_POST['forterocheMail']);
+      $controller->generateTempPwd($_POST['email']);
+      sendContactMail('JeanForteroche', $_POST['email'], 'message:');
     }
   }
   else {
@@ -140,5 +146,5 @@
     $controller->homeView();
     $_SESSION['info'] = "";
   }
-?>
+
 

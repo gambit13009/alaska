@@ -30,7 +30,7 @@ if (isset($_SESSION['admin'])) {
     <div class="col-sm-8">
         <h1>Mot de passe oublié</h1>
 
-        <form action="" method="POST">
+        <form action="index.php?action=passwordlost" method="POST">
             <div class="form-group"><label>Email</label><input type="text" name="email" class="form-control" value=""></div>
             <button type="submit" class="btn btn-primary">Envoyer</button>
         </form>

@@ -40,8 +40,7 @@
     /*Permet de renvoyer le mot de passe à l'administrateur*/
     public function updateTempPwd($tempPwd, $mailtoAdress) {
         $db = Database::getConnection();
-        $tempPassword = $db->prepare('UPDATE user SET pwd = ? WHERE email = ?');
+        $tempPassword = $db->prepare('UPDATE user SET password = ? WHERE email = ?');
         $mailChecker = $tempPassword->execute(array($tempPwd, $mailtoAdress));
     }
   }
-?>

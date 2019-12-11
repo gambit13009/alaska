@@ -48,21 +48,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-forget" name="buttonForget" data-toggle="modal" data-target="#forget">
-                        <a href="index.php?action=passwordlost">Mot de passe oublié</a></button>
-                <!--<div id="forget" class="fade" role="dialog">
-                    <div class="header center">
-                      Veuillez entrer votre adresse mail
-                    </div>
-                    <div class="body">
-                      <form method="post" action="index.php?action=passwordlost">
-                        <div class="form-group">
-                          <label>Mail</label>
-                          <input type="text" class="form-control" name="mail" placeholder="Mail">
-                        </div>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" name="button">Annuler</button>
-                        <input type="submit" class="btn btn-success" name="buttonLogin">
-                      </form>
-                    </div>-->
+                        <a href="index.php?action=pswdlostform">Mot de passe oublié</a></button>
 
                 <button type="button" class="btn btn-danger" data-dismiss="modal" name="button">Annuler</button>
                 <input type="submit" class="btn btn-success" name="buttonLogin">
