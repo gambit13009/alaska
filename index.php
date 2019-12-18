@@ -137,8 +137,8 @@
     }
     elseif ($_GET['action'] == 'passwordlost') {
       $controller = new ControllerAdmin();
-      $controller->generateTempPwd($_POST['email']);
-      sendContactMail('JeanForteroche', $_POST['email'], 'message:');
+      $randomInt = $controller->generateTempPwd($_POST['email']);
+      sendTempPwd($_POST['email'], $randomInt);
     }
   }
   else {

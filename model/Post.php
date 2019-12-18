@@ -1,7 +1,7 @@
 <?php
   require_once'Database.php';
   class Post extends Database {
-    /*Permet de récupèrer un article grace a l'id de la barre de navigation*/
+    /*Permet de récupèrer un article grace a l'id*/
     public function getPost() {
       $db = Database::getConnection();
       if(isset($_GET['id']) AND !empty($_GET['id'])){
@@ -28,7 +28,7 @@
           $_SESSION['info'] = "Votre article a bien été crée";
         } else {
           $_SESSION['info'] = "Veuillez remplir tous les champs";
-          header('Location: index.php');
+            header('Location: index.php');
         }
       }
       if (isset($_SESSION['info'])) {
@@ -50,7 +50,7 @@
           }
         } else {
           $_SESSION['info'] = "Veuillez remplir tous les champs";
-          header('Location: index.php');
+            header('Location: index.php');
         }
       }
       if (isset($_SESSION['info'])) {
@@ -79,7 +79,7 @@
         $delete_comment = $db->prepare('DELETE FROM comment WHERE id_post = ?');
         $delete_comment->execute(array($delete_post));
         $_SESSION['info'] = "Votre article a bien été supprimé";
-        header('Location: index.php');
+          header('Location: index.php?action=admin');
       }
       else {
         $_SESSION['info'] = "Une erreur est survenue";

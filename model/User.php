@@ -35,12 +35,13 @@
     public function getForterocheMail() {
         $db = Database::getConnection();
         $req = $db->prepare('SELECT email FROM user WHERE id = 1');
-        $req->execute(); $forterocheMail = $req->fetch(); return $forterocheMail;
+        $req->execute(); $forterocheMail = $req->fetch(); 
+        return $forterocheMail;
     }
     /*Permet de renvoyer le mot de passe à l'administrateur*/
     public function updateTempPwd($tempPwd, $mailtoAdress) {
         $db = Database::getConnection();
         $tempPassword = $db->prepare('UPDATE user SET password = ? WHERE email = ?');
-        $mailChecker = $tempPassword->execute(array($tempPwd, $mailtoAdress));
+        $randomInt = $tempPassword->execute(array($tempPwd, $mailtoAdress));
     }
   }

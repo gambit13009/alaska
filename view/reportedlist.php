@@ -24,9 +24,10 @@
           <div class="card-body">
               <button class="color-button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" data-upgraded=",MaterialButton,MaterialRipple">
                   <i class="material-icons">warning</i>
-              </button>
-                <h5 class="card-title"></h5>
-                    <p class="card-text"><?= $c['comment_text'] ?></p>
+                  <h5 class="card-title">Article <?= $c['id_post'] ?></h5>
+              </button><br /><br />
+                    <p class="card-text">Commentaire : <?= $c['comment_text'] ?></p>
+                    <p class="card-text">Rédigé par : <?= $c['alias_user'] ?></p><br />
                     <a class="btn btn-success" href="?action=validatecommentary&id=<?= $c['id'] ?>">Valider le Commentaire</a>
                     <a class="btn btn-danger" href="?action=deletecommentary&id=<?= $c['id'] ?>">Supprimer le Commentaire</a>
           </div>

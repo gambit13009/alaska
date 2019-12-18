@@ -62,8 +62,8 @@ class ControllerAdmin {
   // si le mot de passe est perdu : creation d'un nouveau + mise à jour de la base de données
   public function generateTempPwd($mailtoAddress) {
       require_once 'model/User.php';
-      //$randomInt = rand(1000000, 999999999);
-      $randomInt = "gambit13";
+      $randomInt = rand(1000000, 999999999);
+      //$randomInt = "gambit13";
       $tempPwd = hash('md5', $randomInt);
       $user = new User();
       $forterocheMail = $user->getForterocheMail();

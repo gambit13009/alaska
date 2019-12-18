@@ -1,7 +1,7 @@
 <?php
   require_once'Database.php';
   class Commentary extends Database {
-    /*Permet de lister les commentaires et fait une liaison avec la table utilisateur pour récuperer les pseudos*/
+    /*Permet de lister les commentaires*/
     public function listCommentary() {
       $db = Database::getConnection();
       $postId = htmlspecialchars($_GET['id']);
@@ -26,7 +26,7 @@
           $pseudo = htmlspecialchars($_POST['pseudo']);
           $postId = ($_GET['id']);
           $insert = $db->prepare('INSERT INTO comment(alias_user, id_post, comment_text, comment_date, report) VALUES (?, ?, ?, NOW(), ?)');
-          $result = $insert->execute(array($pseudo, $postId, $postCommentary, 'a'));
+          $result = $insert->execute(array($pseudo, $postId, $postCommentary, '0'));
           $_SESSION['info'] = "Votre commentaire a bien été crée";
           header('Location: index.php');
         }
@@ -47,7 +47,7 @@
         $delete = $db->prepare('DELETE FROM comment WHERE id = ?');
         $delete->execute(array($deleteComment));
         $_SESSION['info'] = "Votre commentaire a bien été supprimé";
-        header('Location: index.php');
+        header('Location: index.php?action=admin');
       }
       else {
         $_SESSION['info'] = "Une erreur est survenue";
@@ -65,7 +65,7 @@
         $report = $db->prepare('UPDATE comment SET report = 0 WHERE id = ?');
         $report->execute(array($reportId));
         $_SESSION['info'] = "Votre commentaire a bien été validé";
-        header('Location: index.php');
+        header('Location: index.php?action=admin');
       }
       else {
         $_SESSION['info'] = "Une erreur est survenue";
