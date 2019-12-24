@@ -5,8 +5,8 @@
     public function listCommentary() {
       $db = Database::getConnection();
       $postId = htmlspecialchars($_GET['id']);
-      $commentary = $db->prepare('SELECT * FROM comment WHERE id_post = ?');
-      $commentary->execute(array($postId));
+      $commentary = $db->prepare('SELECT * FROM comment WHERE id_post = ? && report = 0');
+      $result = $commentary->execute(array($postId));
       $commentary = $commentary->fetch();
       return $commentary;
     }
@@ -28,7 +28,7 @@
           $insert = $db->prepare('INSERT INTO comment(alias_user, id_post, comment_text, comment_date, report) VALUES (?, ?, ?, NOW(), ?)');
           $result = $insert->execute(array($pseudo, $postId, $postCommentary, '0'));
           $_SESSION['info'] = "Votre commentaire a bien été crée";
-          header('Location: index.php');
+          header('Location: index.php?action=articles');
         }
         else {
           $_SESSION['info'] = "Veuillez remplir tous les champs";
@@ -47,7 +47,7 @@
         $delete = $db->prepare('DELETE FROM comment WHERE id = ?');
         $delete->execute(array($deleteComment));
         $_SESSION['info'] = "Votre commentaire a bien été supprimé";
-        header('Location: index.php?action=admin');
+        header('Location: index.php?action=moderate');
       }
       else {
         $_SESSION['info'] = "Une erreur est survenue";
@@ -65,7 +65,7 @@
         $report = $db->prepare('UPDATE comment SET report = 0 WHERE id = ?');
         $report->execute(array($reportId));
         $_SESSION['info'] = "Votre commentaire a bien été validé";
-        header('Location: index.php?action=admin');
+        header('Location: index.php?action=moderate');
       }
       else {
         $_SESSION['info'] = "Une erreur est survenue";
@@ -83,7 +83,7 @@
         $report = $db->prepare('UPDATE comment SET report = 1 WHERE id = ?');
         $report->execute(array($reportId));
         $_SESSION['info'] = "Votre commentaire a bien été signalé";
-        header('Location: index.php');
+        header('Location: index.php?action=articles');
       }
       else {
         $_SESSION['info'] = "Une erreur est survenue";

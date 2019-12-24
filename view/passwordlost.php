@@ -27,7 +27,7 @@ if (isset($_SESSION['admin'])) {
 
 
 <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-8" style="text-align: center">
         <h1>Mot de passe oublié</h1>
 
         <form action="index.php?action=passwordlost" method="POST">

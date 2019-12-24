@@ -58,6 +58,7 @@
         </div>
         <div>
         <?php 
+        if ($commentary != null) {
           foreach (array($commentary) as $c) { ?>
           <div class="card">
             <div class="card-header">
@@ -70,7 +71,10 @@
               </blockquote>
             </div>
           </div>
-          <?php } ?>
+        <?php } 
+           } else {
+                echo ' ';
+            } ?>
       </section>
       <?php require'footer.php' ?>
     </body>

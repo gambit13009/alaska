@@ -8,5 +8,6 @@
     tinymce.init({
     selector: '.tinymce'
     });
-    </script>
+    tinyMCE.execCommand("mceRepaint");  
+  </script>
 </footer>
