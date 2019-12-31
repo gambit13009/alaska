@@ -3,7 +3,6 @@ Vous venez de décrocher un contrat avec Jean Forteroche, acteur et écrivain. I
 Seul problème : Jean n'aime pas WordPress et souhaite avoir son propre outil de blog, offrant des fonctionnalités plus simples. Vous allez donc devoir développer un moteur de blog en PHP et MySQL.
 
 Le livre de Jean Forteroche reste à écrire... mais il sera publié en ligne !
-Le livre de Jean Forteroche reste à écrire... mais il sera publié en ligne !
 Vous développerez une application de blog simple en PHP et avec une base de données MySQL. Elle doit fournir une interface frontend (lecture des billets) et une interface backend (administration des billets pour l'écriture). On doit y retrouver tous les éléments d'un CRUD :
 
 Create : création de billets
