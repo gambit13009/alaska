@@ -42,13 +42,13 @@
                   <form method="post" action="index.php?action=comment&id=<?php echo $post['id']?>&pseudo=$_POST['pseudo']&comment=$_POST['comment']">
                     <div class="form-group">
                       <label for="alias">Pseudo</label>
-                      <input type="text" name="pseudo"></input>
+                      <input type="text" name="pseudo">
                       <label for="commentArea">Commentaire</label>
                       <textarea class="form-control" id="commentArea" name="comment" rows="3"></textarea>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-danger" data-dismiss="modal" name="button">Annuler</button>
-                      <input type="submit" class="btn btn-success" name="buttonSign"></input>
+                      <input type="submit" class="btn btn-success" name="buttonSign">
                     </div>
                   </form>
                 </div>
@@ -56,7 +56,7 @@
             </div>
           </div>
         </div>
-        <div>
+        
         <?php 
         if ($commentary != null) {
           foreach (array($commentary) as $c) { ?>

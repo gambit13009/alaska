@@ -1,7 +1,7 @@
 <?php
   require_once'Database.php';
   class Commentary extends Database {
-    /*Permet de lister les commentaires*/
+    /* Permet de lister les commentaires en fonction de chaque article */
     public function listCommentary() {
       $db = Database::getConnection();
       $postId = htmlspecialchars($_GET['id']);
@@ -10,14 +10,14 @@
       $commentary = $commentary->fetch();
       return $commentary;
     }
-    /*Permet de lister les commentaires signalés*/
+    /* Permet de lister les commentaires signalés */
     public function listReportedCommentary() {
       $db = Database::getConnection();
       $commentary = $db->prepare('SELECT * FROM comment WHERE report = 1 ORDER BY id_post');
       $commentary->execute();
       return $commentary;
     }
-    /*Permet de créer un commentaire*/
+    /* Permet de créer un commentaire */
     public function createCommentary() {
       $db = Database::getConnection();
       if (isset($_POST['comment'])) {
@@ -39,7 +39,7 @@
         echo $_SESSION['info'];
       }
     }
-    /*Permet de supprimer un commentaire*/
+    /* Permet de supprimer un commentaire */
     public function deleteCommentary() {
       $db = Database::getConnection();
       if(isset($_GET['id']) AND !empty($_GET['id'])) {
@@ -57,7 +57,7 @@
         echo $_SESSION['info'];
       }
     }
-    /*Permet de valider un commentaire*/
+    /* Permet de valider un commentaire */
     public function validateCommentary() {
       $db = Database::getConnection();
       if(isset($_GET['id']) AND !empty($_GET['id'])) {
@@ -75,7 +75,7 @@
         echo $_SESSION['info'];
       }
     }
-    /*Permet de signaler un commentaire*/
+    /* Permet de signaler un commentaire */
     public function reportCommentary() {
       $db = Database::getConnection();
       if(isset($_GET['id']) AND !empty($_GET['id'])) {

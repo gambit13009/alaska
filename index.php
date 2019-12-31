@@ -140,6 +140,14 @@
       $randomInt = $controller->generateTempPwd($_POST['email']);
       sendTempPwd($_POST['email'], $randomInt);
     }
+    elseif ($_GET['action'] == 'changepswdform') {
+      $controller = new ControllerAdmin();
+      $controller->changepswdView();
+    }  
+    elseif ($_GET['action'] == 'changepassword') {
+      $controller = new ControllerAdmin();
+      $controller->updatePwd();
+    }
   }
   else {
     $controller = new ControllerHome();

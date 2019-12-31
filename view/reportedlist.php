@@ -32,6 +32,7 @@
                     <a class="btn btn-danger" href="?action=deletecommentary&id=<?= $c['id'] ?>">Supprimer le Commentaire</a>
           </div>
         </div>
+       </div>
         <?php } ?>
       </section>
       <?php require'footer.php'; ?>

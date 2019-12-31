@@ -26,9 +26,9 @@
         </div>
         <div class="form-group">
           <label for="postText">Texte</label>
-          <textarea name="postText" class="tinymce"></textarea>
+          <textarea name="postText" id="tinymce"></textarea>
         </div>
-        <input type="submit" class="btn btn-success" name="submit" value="Envoyer"></input>
+        <input type="submit" class="btn btn-success" name="submit" value="Envoyer">
       </form>
     </section>
 

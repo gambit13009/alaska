@@ -40,3 +40,5 @@ if (isset($_SESSION['admin'])) {
 <?php require'footer.php'; ?>
 </body>
 </html>
+
+

@@ -31,6 +31,7 @@
             <a class="btn btn-warning" href="?action=updatepost&id=<?= $p['id'] ?>">Modifier l'article</a>
           </div>
         </div>
+       </div>
         <?php } ?>
       </section>
       <?php require'footer.php'; ?>

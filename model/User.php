@@ -1,12 +1,12 @@
 <?php
   require_once'Database.php';
   class User extends Database {
-    /*Permet de déconnecter l'administrateur*/
+    /* Permet de déconnecter l'administrateur */
     public function disconnect() {
       $_SESSION['admin'] = 'pok';
       header('Location: index.php');
     }
-    /*Permet de connecter l'administrateur*/
+    /* Permet de connecter l'administrateur */
     public function loginUser() {
       $db = Database::getConnection();
       if(isset($_POST['buttonLogin'])) {
@@ -38,10 +38,16 @@
         $req->execute(); $forterocheMail = $req->fetch(); 
         return $forterocheMail;
     }
-    /*Permet de renvoyer le mot de passe à l'administrateur*/
+    /* Permet de renvoyer un nouveau mot de passe à l'administrateur */
     public function updateTempPwd($tempPwd, $mailtoAdress) {
         $db = Database::getConnection();
         $tempPassword = $db->prepare('UPDATE user SET password = ? WHERE email = ?');
         $randomInt = $tempPassword->execute(array($tempPwd, $mailtoAdress));
+    }
+    /* Permet de modifier le mot de passe de l'administrateur */
+    public function updatePwd($oldPwd, $newPwd, $newPwdConfirm, $mailtoAdress) { 
+        $db = Database::getConnection();
+        $updatePassword = $db->prepare('UPDATE user SET password = ? WHERE email = ?');
+        $updatePassword->execute(array($oldPwd, $newPwd, $newPwdConfirm, $mailtoAdress)); 
     }
   }
