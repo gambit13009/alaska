@@ -17,7 +17,7 @@
       $getpost = new Post();
       $post = $getpost->getPost();
       $getcomment = new Commentary();
-      $commentary = $getcomment->listCommentary();
+      $comments = $getcomment->listCommentary();
       require 'view/article.php';
     }
     public function getLastPosts() {

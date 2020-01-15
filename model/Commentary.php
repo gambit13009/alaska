@@ -3,13 +3,14 @@
   class Commentary extends Database {
     /* Permet de lister les commentaires en fonction de chaque article */
     public function listCommentary() {
-      $db = Database::getConnection();
+      $db = Database::getConnection(); 
       $postId = htmlspecialchars($_GET['id']);
-      $commentary = $db->prepare('SELECT * FROM comment WHERE id_post = ? && report = 0');
-      $result = $commentary->execute(array($postId));
-      $commentary = $commentary->fetch();
-      return $commentary;
-    }
+      $commentary = $db->prepare('SELECT id, comment_text, alias_user, report, comment_date FROM comment WHERE id_post = :id_post && report = 0'); 
+      $commentary->bindValue(':id_post', $postId, PDO::PARAM_INT); 
+      $commentary->execute(); 
+      $comments = $commentary->fetchAll(PDO::FETCH_ASSOC); 
+      return $comments;
+  }
     /* Permet de lister les commentaires signalés */
     public function listReportedCommentary() {
       $db = Database::getConnection();

@@ -58,8 +58,8 @@
         </div>
         
         <?php 
-        if ($commentary != null) {
-          foreach (array($commentary) as $c) { ?>
+        if ($comments != null) {
+          foreach ($comments as $c) { ?>
           <div class="card">
             <div class="card-header">
               Rédigé par : <?=$c['alias_user'] ?>
@@ -74,8 +74,7 @@
         <?php } 
            } else {
                 echo ' ';
-            } ?>
-      </section>
-      <?php require'footer.php' ?>
-    </body>
-</html>
+            } 
+      
+          require'footer.php'; 
+          ?>

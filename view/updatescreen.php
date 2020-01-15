@@ -28,7 +28,7 @@
               <?php } else { ?>
                 <p class="card-text"><p><?= $p['message'] = mb_substr($p['message'], 0, strpos($p['message'], ' ', 100)); ?>...</p>
               <?php } ?>
-            <a class="btn btn-warning" href="?action=updatepost&id=<?= $p['id'] ?>">Modifier l'article</a>
+            <a class="btn btn-warning" href="?action=getpost&id=<?= $p['id'] ?>">Modifier l'article</a>
           </div>
         </div>
        </div>

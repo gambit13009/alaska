@@ -50,8 +50,17 @@
     }
     elseif ($_GET['action'] == 'updatepost') {
       if (isset($_GET['id']) && $_GET['id'] > 0) {
+          $controller = new ControllerAdmin();
+          $controller->updatePost();
+      }
+      else {
+        $_SESSION['info'] = "Erreur : aucune page trouvée";
+      }
+    }
+    elseif ($_GET['action'] == 'getpost') {
+      if (isset($_GET['id']) && $_GET['id'] > 0) {
       $controller = new ControllerAdmin();
-      $controller->updatePost();
+      $controller->getPost();
       }
       else {
         $_SESSION['info'] = "Erreur : aucune page trouvée";

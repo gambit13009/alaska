@@ -35,7 +35,7 @@ function sendTempPwd($mailtoAddress, $randomInt)
                 );
 
         // Destinataire
-        $mail->setFrom('jerome.david@cegetel.net', '[Blog Alaska]');
+        $mail->setFrom('jeromedemarseille@gmail.com', '[Blog Alaska]');
         $mail->addAddress($mailtoAddress);
 
         // Contenu

@@ -4,6 +4,12 @@ class ControllerAdmin {
     require 'model/User.php';
     require 'view/admin.php';
   }
+  public function homeView() {
+    require 'model/Post.php';
+    $lastposts = new Post();
+    $post = $lastposts->getLastPosts();
+    require 'view/accueil.php';
+  }
   public function pswdlostView() {
     require 'view/passwordlost.php';
   }
@@ -14,9 +20,15 @@ class ControllerAdmin {
     require 'model/User.php';
     require 'model/Post.php';
     $update = new Post();
+    $post = $update->updatePost();
+    require 'view/admin.php';
+  }
+  public function getPost() {
+    require 'model/User.php';
+    require 'model/Post.php';
+    $update = new Post();
     $post = $update->getPost();
     require 'view/updatepost.php';
-    $post = $update->updatePost();
   }
   public function updateList() {
     require 'model/User.php';
@@ -90,7 +102,7 @@ class ControllerAdmin {
                 $hashedPwd = hash('md5', $newPwd); $new = $forterocheMail->updatePwd($hashedPwd, $mailtoAdress);  
             } 
         } else { 
-          throw new Exception ('Vous n\'avez pas renseigné le bon ancien mot de passe<br><a href="index.php?action=changepswdform">Réessayer</a><br>'); 
+          throw new Exception ('Vous n\'avez pas renseigné le bon mot de passe<br><a href="index.php?action=changepswdform">Réessayer</a><br>'); 
         } 
   }
 }
