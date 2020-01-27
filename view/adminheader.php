@@ -29,6 +29,11 @@
      <?php
  }
  ?>
+      
+    <!--Changement de mot de passe-->  
+    <button type="button" class="btn btn-change" name="buttonChange" data-toggle="modal" data-target="#forget">
+        <a href="index.php?action=changepswdform">Changement du mot de passe</a>
+    </button>
     <!--Deconnexion-->
     <form method="post" action="index.php?action=logout">
       <input type="submit" class="btn btn-outline-danger marginheader" name="buttonLogout" value="Déconnexion">

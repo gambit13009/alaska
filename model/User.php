@@ -38,6 +38,12 @@
         $req->execute(); $forterocheMail = $req->fetch(); 
         return $forterocheMail;
     }
+    public function getForterochePwd() {
+        $db = Database::getConnection();
+        $req = $db->prepare('SELECT password FROM user WHERE id = 1');
+        $req->execute(); $forterochePwd = $req->fetch(); 
+        return $forterochePwd;
+    }
     /* Permet de renvoyer un nouveau mot de passe à l'administrateur */
     public function updateTempPwd($tempPwd, $mailtoAdress) {
         $db = Database::getConnection();
@@ -45,9 +51,16 @@
         $randomInt = $tempPassword->execute(array($tempPwd, $mailtoAdress));
     }
     /* Permet de modifier le mot de passe de l'administrateur */
-    public function updatePwd($oldPwd, $newPwd, $newPwdConfirm, $mailtoAdress) { 
+    public function updatePwd($newPwd, $forterocheMail) { 
         $db = Database::getConnection();
         $updatePassword = $db->prepare('UPDATE user SET password = ? WHERE email = ?');
-        $updatePassword->execute(array($oldPwd, $newPwd, $newPwdConfirm, $mailtoAdress)); 
+        $updatePassword->execute(array($newPwd, $forterocheMail[0]));
+        if ($updatePassword = 'ok') {
+            $_SESSION['info'] = "Mot de passe changé avec succès";
+            header('Location: index.php');
+        } else {
+        $_SESSION['info'] = "Un problème est survenu";
+        header('Location: index.php');
+      }
     }
   }

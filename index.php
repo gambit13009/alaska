@@ -155,7 +155,7 @@
     }  
     elseif ($_GET['action'] == 'changepassword') {
       $controller = new ControllerAdmin();
-      $controller->updatePwd();
+      $controller->updatePwd($_POST['old_pwd'],$_POST['new_log_pwd'],$_POST['new_log_pwd_confirm']);
     }
   }
   else {

@@ -7,11 +7,9 @@ require ('PHPMailer/src/Exception.php');
 require ('PHPMailer/src/PHPMailer.php');
 require ('PHPMailer/src/SMTP.php');
 
-//require_once('model/User.php');
 
 
-
-// Envoi d'un mail avec un nouveau mot de passe en cas d'oubli du mot de passe
+// Envoi d'un mail avec un nouveau mot de passe en cas de mot de passe oublié
 function sendTempPwd($mailtoAddress, $randomInt)
 {
     $mail = new PHPMailer;
@@ -35,7 +33,7 @@ function sendTempPwd($mailtoAddress, $randomInt)
                 );
 
         // Destinataire
-        $mail->setFrom('jeromedemarseille@gmail.com', '[Blog Alaska]');
+        $mail->setFrom('jerome.david@cegetel.net', '[Blog Alaska]');
         $mail->addAddress($mailtoAddress);
 
         // Contenu
@@ -44,10 +42,11 @@ function sendTempPwd($mailtoAddress, $randomInt)
         $mail->Body    = 'Bonjour, <br>Voici votre nouveau mot de passe : '. $randomInt . '<br>Cordialement,<br>L\'administration du site';
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-        // envoi
+        // Envoi
         $mail->send();
 
-        header('Refresh:5; url=index.php?action=login');
+        $_SESSION['info'] = "Mot de passe envoyé avec succès";
+        header('Refresh:5; url=index.php');
         echo 'Votre nouveau mot de passe a été envoyé avec succès.<br>Veuillez patienter, vous allez être redirigé vers la page de connexion...';
     }
 

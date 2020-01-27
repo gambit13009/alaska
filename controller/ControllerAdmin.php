@@ -74,11 +74,10 @@ class ControllerAdmin {
     $commentary = $listcomment->listReportedCommentary();
     require 'view/reportedlist.php';
   }
-  // si le mot de passe est perdu : creation d'un nouveau + mise à jour de la base de données
+  // si le mot de passe est perdu : creation d'un nouveau + mise à jour de la BDD
   public function generateTempPwd($mailtoAddress) {
       require_once 'model/User.php';
       $randomInt = rand(1000000, 999999999);
-      //$randomInt = "gambit13";
       $tempPwd = hash('md5', $randomInt);
       $user = new User();
       $forterocheMail = $user->getForterocheMail();
@@ -91,18 +90,20 @@ class ControllerAdmin {
         }
   }
   // modification du mot de passe
-  public function updatePwd($oldPwd, $newPwd, $newPwdConfirm, $mailtoAdress) {
+  public function updatePwd($oldPwd,$newPwd,$newPwdConfirm) {
       require 'model/User.php';
-      $forterocheMail = new ForterocheMail(); 
-      $old = $forterocheMail->checkPwd($mailtoAdress); 
-        if ($old[0] == hash('md5', $oldPwd)) { 
-            if ($newPwd != $newPwdConfirm) { 
-                throw new Exception ('Merci de rentrer deux fois le même mot de passe<br><a href="index.php?action=changepswdform">Réessayer</a><br>'); 
-            } else { 
-                $hashedPwd = hash('md5', $newPwd); $new = $forterocheMail->updatePwd($hashedPwd, $mailtoAdress);  
-            } 
+      $user = new User(); 
+      $forterochePwd = $user->getForterochePwd(); 
+      $forterocheMail = $user->getForterocheMail();
+      if ($forterochePwd[0] == hash('md5', $oldPwd)) { 
+        if ($newPwd != $newPwdConfirm) { 
+            throw new Exception ('Merci de rentrer deux fois le même mot de passe<br><a href="index.php?action=changepswdform">Réessayer</a><br>'); 
         } else { 
-          throw new Exception ('Vous n\'avez pas renseigné le bon mot de passe<br><a href="index.php?action=changepswdform">Réessayer</a><br>'); 
+            $hashedPwd = hash('md5', $newPwd); 
+            $user->updatePwd($hashedPwd, $forterocheMail);  
         } 
+      } else { 
+      throw new Exception ('Vous n\'avez pas renseigné le bon mot de passe<br><a href="index.php?action=changepswdform">Réessayer</a><br>'); 
+      } 
   }
 }
