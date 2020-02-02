@@ -157,6 +157,10 @@
       $controller = new ControllerAdmin();
       $controller->updatePwd($_POST['old_pwd'],$_POST['new_log_pwd'],$_POST['new_log_pwd_confirm']);
     }
+    elseif ($_GET['action'] == 'mentionslegales') {
+      $controller = new ControllerHome();
+      $controller->mentionslegalesView();
+    }
   }
   else {
     $controller = new ControllerHome();

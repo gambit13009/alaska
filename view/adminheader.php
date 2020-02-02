@@ -16,6 +16,9 @@
         <li class="nav-item">
           <a class="nav-link" href="index.php?action=admin">Centre d'administration<span class="sr-only"></span></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.php?action=changepswdform">Changement du mot de passe<span class="sr-only"></span></a>
+        </li>
       </ul>
     </div>
  <!--Gestion des messages d'erreur -->
@@ -30,10 +33,6 @@
  }
  ?>
       
-    <!--Changement de mot de passe-->  
-    <button type="button" class="btn btn-change" name="buttonChange" data-toggle="modal" data-target="#forget">
-        <a href="index.php?action=changepswdform">Changement du mot de passe</a>
-    </button>
     <!--Deconnexion-->
     <form method="post" action="index.php?action=logout">
       <input type="submit" class="btn btn-outline-danger marginheader" name="buttonLogout" value="Déconnexion">

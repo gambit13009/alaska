@@ -22,7 +22,7 @@
       <form action="" method="post" style="width: 100%">
         <div class="form-group">
           <label for="title">Titre</label>
-          <input type="text" class="form-control" name="title" placeholder="Titre">
+          <input type="text" class="form-control" name="title" placeholder="Titre" style="width: 100%">
         </div>
         <div class="form-group">
           <label for="postText">Texte</label>

@@ -1,12 +1,12 @@
 <?php
   require_once'Database.php';
   class User extends Database {
-    /* Permet de déconnecter l'administrateur */
+    /* Permet de se déconnecter */
     public function disconnect() {
       $_SESSION['admin'] = 'pok';
       header('Location: index.php');
     }
-    /* Permet de connecter l'administrateur */
+    /* Permet de se connecter en tant qu'admin */
     public function loginUser() {
       $db = Database::getConnection();
       if(isset($_POST['buttonLogin'])) {
@@ -32,25 +32,27 @@
         header('Location: index.php');
       }
     }
+    /* Permet de vérifier le mail de l'admin */  
     public function getForterocheMail() {
         $db = Database::getConnection();
         $req = $db->prepare('SELECT email FROM user WHERE id = 1');
         $req->execute(); $forterocheMail = $req->fetch(); 
         return $forterocheMail;
     }
+    /* Permet de vérifier le mot de passe de l'admin */  
     public function getForterochePwd() {
         $db = Database::getConnection();
         $req = $db->prepare('SELECT password FROM user WHERE id = 1');
         $req->execute(); $forterochePwd = $req->fetch(); 
         return $forterochePwd;
     }
-    /* Permet de renvoyer un nouveau mot de passe à l'administrateur */
-    public function updateTempPwd($tempPwd, $mailtoAdress) {
+    /* Permet de renvoyer un nouveau mot de passe à l'admin */
+    public function updateTempPwd($tempPwd, $mailtoAddress) {
         $db = Database::getConnection();
         $tempPassword = $db->prepare('UPDATE user SET password = ? WHERE email = ?');
-        $randomInt = $tempPassword->execute(array($tempPwd, $mailtoAdress));
+        $randomInt = $tempPassword->execute(array($tempPwd, $mailtoAddress));        
     }
-    /* Permet de modifier le mot de passe de l'administrateur */
+    /* Permet de modifier le mot de passe de l'admin */
     public function updatePwd($newPwd, $forterocheMail) { 
         $db = Database::getConnection();
         $updatePassword = $db->prepare('UPDATE user SET password = ? WHERE email = ?');

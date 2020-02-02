@@ -35,7 +35,7 @@
         echo $_SESSION['info'];
       }
     }
-    /* Permet de modifier un article, il récupère les informations de l'article puis les modifie */
+    /* Permet de modifier un article */
     public function updatePost() {
       $db = Database::getConnection();
       if (isset($_POST['title'], $_POST['postText'])) {
@@ -50,7 +50,7 @@
           }
         } else {
           $_SESSION['info'] = "Veuillez remplir tous les champs";
-            header('Location: index.php');
+          header('Location: index.php');
         }
       }
       if (isset($_SESSION['info'])) {
@@ -79,7 +79,7 @@
         $delete_comment = $db->prepare('DELETE FROM comment WHERE id_post = ?');
         $delete_comment->execute(array($delete_post));
         $_SESSION['info'] = "Votre article a bien été supprimé";
-          header('Location: index.php?action=admin');
+        header('Location: index.php?action=admin');
       }
       else {
         $_SESSION['info'] = "Une erreur est survenue";

@@ -1,21 +1,26 @@
 <?php
 class ControllerAdmin {
+  // vue pour l'administrateur
   public function adminView() {
     require 'model/User.php';
     require 'view/admin.php';
   }
+  // vue pour la page d'accueil    
   public function homeView() {
     require 'model/Post.php';
     $lastposts = new Post();
     $post = $lastposts->getLastPosts();
     require 'view/accueil.php';
   }
+  // vue pour le  mot de passe oublié    
   public function pswdlostView() {
     require 'view/passwordlost.php';
   }
+  // vue pour changer de mot de passe    
   public function changepswdView() {
     require 'view/changepassword.php';
   }
+  // fonction pour mettre à jour un article    
   public function updatePost() {
     require 'model/User.php';
     require 'model/Post.php';
@@ -23,6 +28,7 @@ class ControllerAdmin {
     $post = $update->updatePost();
     require 'view/admin.php';
   }
+  // fonction pour afficher un article    
   public function getPost() {
     require 'model/User.php';
     require 'model/Post.php';
@@ -30,6 +36,7 @@ class ControllerAdmin {
     $post = $update->getPost();
     require 'view/updatepost.php';
   }
+  // fonction pour mettre à jour les articles    
   public function updateList() {
     require 'model/User.php';
     require 'model/Post.php';
@@ -37,13 +44,15 @@ class ControllerAdmin {
     $post = $updatelist->listPost();
     require 'view/updatescreen.php';
   }
+  // fonction pour créer un article    
   public function createPost() {
     require 'model/User.php';
     require 'model/Post.php';
-    require 'view/createpost.php';
     $create = new Post();
     $post = $create->createPost();
+    require 'view/createpost.php';  
   }
+  // fonction pour effacer un article de la liste     
   public function deleteList() {
     require 'model/User.php';
     require 'model/Post.php';
@@ -51,22 +60,26 @@ class ControllerAdmin {
     $post = $deletelist->listPost();
     require 'view/deletescreen.php';
   }
+  // fonction pour effacer un article    
   public function deletePost() {
     require 'model/User.php';
     require 'model/Post.php';
     $deletepost = new Post();
     $post = $deletepost->deletePost();
   }
+  // fonction pour effacer un commentaire signalé
   public function deleteCommentary() {
     require 'model/Commentary.php';
     $deletecommentary = new Commentary();
     $commentary = $deletecommentary->deleteCommentary();
   }
+  // fonction pour valider un commentaire signalé    
   public function validateCommentary() {
     require 'model/Commentary.php';
     $validatecommentary = new Commentary();
     $commentary = $validatecommentary->validateCommentary();
   }
+  // fonction pour afficher les commentaires signalés    
   public function listReported() {
     require 'model/Commentary.php';
     require 'model/Post.php';
@@ -81,15 +94,15 @@ class ControllerAdmin {
       $tempPwd = hash('md5', $randomInt);
       $user = new User();
       $forterocheMail = $user->getForterocheMail();
-        if ($forterocheMail[0] == $mailtoAddress) {
-            $user->updateTempPwd($tempPwd, $mailtoAddress);
-            return $randomInt;
-        } else {
-            throw new Exception ('Votre adresse est inconnue dans la base.<br>
-            Cliquez pour revenir à la <a href="index.php?action=login">page de connexion</a>');
-        }
+      if ($forterocheMail = $mailtoAddress) {
+          $user->updateTempPwd($tempPwd, $forterocheMail);
+          return $randomInt;
+      } else {
+            $_SESSION['info'] = 'Votre adresse est inconnue dans la base.<br>
+            Cliquez pour revenir à la <a href="index.php?action=login">page de connexion</a>';
+      }
   }
-  // modification du mot de passe
+  // fonction pour modifier le mot de passe
   public function updatePwd($oldPwd,$newPwd,$newPwdConfirm) {
       require 'model/User.php';
       $user = new User(); 
@@ -97,13 +110,15 @@ class ControllerAdmin {
       $forterocheMail = $user->getForterocheMail();
       if ($forterochePwd[0] == hash('md5', $oldPwd)) { 
         if ($newPwd != $newPwdConfirm) { 
-            throw new Exception ('Merci de rentrer deux fois le même mot de passe<br><a href="index.php?action=changepswdform">Réessayer</a><br>'); 
+            $_SESSION['info'] = 'Merci de rentrer deux fois le même mot de passe<br><a href="index.php?action=changepswdform">Réessayer</a><br>'; 
+            header('Location: index.php');
         } else { 
             $hashedPwd = hash('md5', $newPwd); 
             $user->updatePwd($hashedPwd, $forterocheMail);  
         } 
       } else { 
-      throw new Exception ('Vous n\'avez pas renseigné le bon mot de passe<br><a href="index.php?action=changepswdform">Réessayer</a><br>'); 
+      $_SESSION['info'] = 'Vous n\'avez pas renseigné le bon mot de passe<br><a href="index.php?action=changepswdform">Réessayer</a><br>'; 
+          header('Location: index.php');
       } 
   }
 }

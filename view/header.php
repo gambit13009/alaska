@@ -47,8 +47,7 @@
                   <input type="password" class="form-control" name="pass" placeholder="Mot de passe">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-forget" name="buttonForget" data-toggle="modal" data-target="#forget">
-                        <a href="index.php?action=pswdlostform">Mot de passe oublié</a></button>
+                    <a class="lost-pwd" href="index.php?action=pswdlostform">Mot de passe oublié</a>
                         <button type="button" class="btn btn-danger" data-dismiss="modal" name="button">Annuler</button>
                         <input type="submit" class="btn btn-success" name="buttonLogin">
                 </div>
