@@ -10,7 +10,7 @@
                 </div>
                 <div class="site-info col-sm-6">
 				<div class="copyright-text">
-					Copyright © 2020. Réalisé par Jérôme DAVID pour OpenClassrooms.				
+					Copyright © 2020. <br />Réalisé par Jérôme DAVID pour OpenClassrooms.				
                 </div>
 			</div>
 	       </div>

@@ -45,12 +45,17 @@ class ControllerAdmin {
     require 'view/updatescreen.php';
   }
   // fonction pour créer un article    
+  public function createList() {
+       require 'view/createpost.php';
+  }
+  // fonction pour créer un article    
   public function createPost() {
     require 'model/User.php';
     require 'model/Post.php';
     $create = new Post();
-    $post = $create->createPost();
-    require 'view/createpost.php';  
+    $postCr = $create->createPost();
+    $post = $create->getLastPosts();
+    require 'view/admin.php';
   }
   // fonction pour effacer un article de la liste     
   public function deleteList() {

@@ -45,10 +45,6 @@
     margin-top: 9rem;
 }
 
-.rows {
-  margin-top: -5rem;
-}
-
 .textcolor {
   color:#e9ecef;
 }
@@ -147,10 +143,11 @@ p {
 
 .footer-inner {
     background-color: #ADD8E6;
+    margin-top: 5rem;
 }
 
 .footer-title {
-    margin-bottom: 1rem;
+    margin: 1rem 0;
 }
 
 .copyright-text {

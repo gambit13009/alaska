@@ -51,10 +51,10 @@
     <section class="sectionmargin container" id="bio">
       <div class="jumbotron">
         <h1 class="display-4">Jean Forteroche</h1>
-        <p class="lead">Auteur et écrivain Canadien contemporain de romans et de nouvelles à succès.</p>
-        <hr class="my-4">
-        <p>Sed vitae venenatis metus, in condimentum nisi. Etiam finibus tortor sit amet lacus hendrerit commodo. Donec finibus accumsan rhoncus. Nulla maximus gravida lectus vitae imperdiet. Suspendisse aliquet metus ullamcorper, suscipit justo ut, malesuada neque. Aenean vitae sapien ipsum. Sed aliquet elementum tempus.</p>
-        <a class="btn btn-primary btn-lg" href="index.php?action=bio" role="button">Lire la suite</a>
+            <p class="lead">Auteur et écrivain Canadien contemporain de romans et de nouvelles à succès.</p>
+            <hr class="my-4">
+            <p>Sed vitae venenatis metus, in condimentum nisi. Etiam finibus tortor sit amet lacus hendrerit commodo. Donec finibus accumsan rhoncus. Nulla maximus gravida lectus vitae imperdiet. Suspendisse aliquet metus ullamcorper, suscipit justo ut, malesuada neque. Aenean vitae sapien ipsum. Sed aliquet elementum tempus.</p>
+            <a class="btn btn-primary btn-lg" href="index.php?action=bio" role="button">Lire la suite</a>
       </div>
     </section>
      <!--Footer-->

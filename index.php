@@ -25,6 +25,10 @@
         $controller->homeView();
       }
     }
+    elseif ($_GET['action'] == 'create') {
+      $controller = new ControllerAdmin();
+      $controller->createList();
+    }
     elseif ($_GET['action'] == 'createpost') {
       $controller = new ControllerAdmin();
       $controller->createPost();
